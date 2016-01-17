@@ -1,18 +1,20 @@
 # Define the variables
-var('b')
+var('b','X','Y')
 k = randint(3,6)
 c = randint(1,5)
 d = randint(-5,5)
 p = randint(1,k-2)
-q = randint(0,k-2)
+I = [i for i in range(0,k-1)]
+I.remove(p)
+q = choice(I)
 a = randint(1,3)
 g(x)=x^(-k)
 h(x) = c*x^p + d*x^q
 f(x) = (h(x)*g(x)).expand()
 F(x) = f(x).integrate(x)
 L = limit(F(x)-F(a),x=infinity)
-# Define the problem
 
+# Define the problem
 Prob=[]
 
 Prob+= ['Show that $$\int_{%s}^{\infty} %s\\left(%s\\right) \, dx$$ has a finite value and compute it'%(
@@ -32,13 +34,14 @@ problem()
 
 Sol=[]
 
-Sol += ['The first step is to replace $\infty$ with $b$ and to expand out $$ %s\\left(%s\\right) $$ into a form we can integrate. This gives:'%(
+Sol += ['The first step is to replace $\infty$ with $b$ to give: $$ \int_{%s}^{b} %s\\left(%s\\right) $$'%(
+	a,
 	latex(g(x)),
 	latex(h(x)) )]
 
-Sol += ['$$ \int_{%s}^{b} %s \, dx $$'%(
+Sol += ['Now we expand out the function into a form we can integrate: $$ \int_{%s}^{b} %s \, dx $$'%(
 	a,
-	latex(f(x)) )]
+	latex( c*x^(X) + d*x^(Y) ).replace('X',str(p-k)).replace('Y',str(q-k)) )]
 
 Sol += ['Now we carry out the integration to get $$ \\left(%s\\right) - \\left(%s\\right)'%(
 	latex(F(b)), 

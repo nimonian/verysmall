@@ -90,16 +90,18 @@
 			</p>
 			</section>
 			<section>
-			<h4> Integrating polynomials </h4>
+			<h4> Integrating terms in index form </h4>
 			<p>
-				Remember that a polynomial is a function of the form
-					$$ f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{2}x^{2} + a_{1}x + a_{0} $$
-				<br />
-				The numbers $a_{i}$ are called the <em> coefficients </em> and $a_{0}$ is called the <em> constant </em> term.
-				<br />
 				The rule for integrating $x^{n}$ is
 					$$ \int x^{n} \, dx = \frac{x^{n+1}}{n+1} + c$$
 				This still works even when $n$ is not a positive integer!
+					\begin{align*}
+					\int \frac{1}{x\sqrt{x}} \, dx
+						& = \int \frac{1}{x^{\frac{3}{2}}} \, dx \\
+						& = \int x^{-\frac{3}{2}} \, dx \qquad \left(n=-\frac{3}{2}\right) \\
+						& = x^{-\frac{1}{2}} \div \left(-\frac{1}{2}\right) + c \\
+						& = -2x^{-\frac{1}{2}} + c \\
+					\end{align*}
 			</p>
 			</section>
 
@@ -168,7 +170,7 @@
 					$$ \frac{1}{b^{k}} \longrightarrow 0 \qquad \text{but} \qquad b^{k} \longrightarrow \infty $$
 			<br />
 				However, as $ b \rightarrow 0 $,
-					$$ \frac{1}{b^{k}} \longrightarrow 0 \qquad \text{but} \qquad b^{k} \longrightarrow \infty $$ </p>
+					$$ \frac{1}{b^{k}} \longrightarrow \infty \qquad \text{but} \qquad b^{k} \longrightarrow 0 $$ </p>
 			<br />
 			<p> The same is true for $a$ </p>
 
@@ -185,6 +187,13 @@
 				However, they can be worked out using the same trick as we use for $\pm\infty$
 				</p>
 
+			</section>
+			<section>
+			<div class="example">
+				<script type="text/x-sage">
+				load('https://github.com/nimonian/verysmall/raw/gh-pages/rudiments/fp1/calculus/improper_integral_zero.sage')
+				</script>
+				</div>
 			</section>
 
 		</section>
