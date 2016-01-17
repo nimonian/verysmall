@@ -9,6 +9,18 @@
 		<title>Rudiment Designer</title>
 
 		<link rel="stylesheet" type="text/css" href="designer.css">
+
+        <script type="text/x-mathjax-config">
+        	MathJax.Hub.Config({
+        		jax: ["input/TeX","output/HTML-CSS"],
+        		displayAlign: "left"
+        		});
+		</script>
+
+        <script type="text/javascript"
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+
 		<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
 		<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
 		<script>sagecell.makeSagecell({

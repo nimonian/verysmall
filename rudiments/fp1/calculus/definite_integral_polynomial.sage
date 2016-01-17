@@ -11,7 +11,7 @@ b = randint(a,5)
 
 Prob = []
 
-Prob += ['Compute the following:']
+Prob += ['Compute the following (your answer should be a number):']
 
 Prob += ['$$\\int_{%s}^{%s} %s \\, dx$$'%(
         a,
@@ -35,13 +35,17 @@ Sol += ['$$ \\left[%s\\right]_{%s}^{%s} $$'%(
         a,
         b )]
 
-Sol += ['$$= \\left( %s \\right) - \\left( %s \\right)'%(
-	latex(F(x)).replace('x','%s'%('('+str(b)+')')),
-	latex(F(x)).replace('x','%s'%('('+str(a)+')')), )]
+Sol += ['$$= \\left( %s \\right)'%(
+	latex(F(x)).replace('x','%s'%('('+str(b)+')')) )]
 
-Sol += ['$$= \\left( %s \\right) - \\left(%s\\right)$$'%(
+Sol += ['$$\\qquad - \\left(%s\\right)$$'%(
+	latex(F(x)).replace('x','%s'%('('+str(a)+')')) )]
+
+Sol += ['$$= \\left( %s \\right) - \\left( %s \\right)$$'%(
 	latex(F(b)),
 	latex(F(a)) )]
+
+
 
 Sol += ['$$= %s $$'%(
 	latex(F(b)-F(a)) )]
