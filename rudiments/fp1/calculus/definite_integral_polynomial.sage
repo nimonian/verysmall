@@ -30,25 +30,21 @@ problem()
 
 Sol = []
 
-Sol += ['$$ \\left[%s\\right]_{%s}^{%s} $$'%(
-        latex(F(x)),
+Sol +=[ '''
+\\begin{align*} & \\left[%s\\right]_{%s}^{%s} \\\ 
+	& = \\left( %s \\right) \\\ 
+	& \\qquad - \\left(%s\\right) \\\  
+	& = \\left( %s \\right) - \\left( %s \\right) \\\ 
+	& = %s \\end{align*} '''%(
+		latex(F(x)),
         a,
-        b )]
-
-Sol += ['$$= \\left( %s \\right)'%(
-	latex(F(x)).replace('x','%s'%('('+str(b)+')')) )]
-
-Sol += ['$$\\qquad - \\left(%s\\right)$$'%(
-	latex(F(x)).replace('x','%s'%('('+str(a)+')')) )]
-
-Sol += ['$$= \\left( %s \\right) - \\left( %s \\right)$$'%(
-	latex(F(b)),
-	latex(F(a)) )]
-
-
-
-Sol += ['$$= %s $$'%(
-	latex(F(b)-F(a)) )]
+        b,
+		latex(F(x)).replace('x','%s'%('('+str(b)+')')),
+ 		latex(F(x)).replace('x','%s'%('('+str(a)+')')),
+ 		latex(F(b)),
+		latex(F(a)),
+		latex(F(b)-F(a))
+        )]
 
 @interact
 def Solution(ShowSolution=checkbox(default=False, label='Solution')):

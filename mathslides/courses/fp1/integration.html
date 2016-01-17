@@ -5,8 +5,11 @@
 
 	<script type="text/x-mathjax-config">
 	    MathJax.Hub.Config({
-            jax: ["input/TeX","output/HTML-CSS"],
-            displayAlign: "left" });
+	    	tex2jax: {
+	    		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	    		processEscapes:true
+	    	},
+            jax: ["input/TeX","output/HTML-CSS"] });
 	</script>
 
     <script type="text/javascript"
@@ -79,10 +82,9 @@
 				Recall from C1 that we may <em> integrate </em> a function $f(x)$ to give a new function $F(x)$.
 				<br />
 				In symbols, we write:
-					$$ \int f(x) \, dx = F(x) + c $$
+					\[ \int f(x) \, dx = F(x) + c \]
 				<br />
-				Importantly, the derivative of this function $F(x)$ is $f(x)$, so
-					$$ F^{\prime}(x) = f(x) $$
+				Importantly, the derivative of this function $F(x)$ is $f(x)$, so \[F^{\prime}(x) = f(x) \]
 			</p>
 			</section>
 			<section>

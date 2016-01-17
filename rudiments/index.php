@@ -12,8 +12,7 @@
 
         <script type="text/x-mathjax-config">
         	MathJax.Hub.Config({
-        		jax: ["input/TeX","output/HTML-CSS"],
-        		displayAlign: "left"
+        		jax: ["input/TeX","output/HTML-CSS"]
         		});
 		</script>
 
