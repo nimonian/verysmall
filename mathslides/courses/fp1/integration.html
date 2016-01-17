@@ -64,7 +64,7 @@
 
 		<section>
 			<section>
-			<h2> Basic integration </h2>
+			<h2> Indefinite integration </h2>
 			<p>
 				Recall from C1 that we may <em> integrate </em> a function $f(x)$ to give a new function $F(x)$.
 				<br />
@@ -99,8 +99,32 @@
 		</section>
 
 		<section>
-		<h6> Definite Integration </h6>
-			<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/pybc8D92/width/900/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/true/ld/false/sri/false/at/auto" width="900px" height="600px" style="border:0px;"> </iframe>
+
+			<section>
+				
+			<h3> Definite Integration </h3>
+			<p> Once the integral has been given <em> limits of integration </em>, we can substitute them to give a numeric answer. This is called <em> definite integration </em>. In general notation, we write:
+				$$ \int_{a}^{b} f(x) \, dx = F(b) - F(a) $$
+			The number $a$ is the <em>lower limit</em> of integration, and the number $b$ the <em>upper limit</em>.</p>
+			<p> You may remember that, if \(f(x) \geq 0\) for $a < x < b$, then $\int_{a}^{b} f(x) \, dx$ represents the area under the curve $f(x)$ between $a$ and $b$.
+
+			</section>
+
+			<section>
+
+			<h6> Definite Integration </h6>
+				<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/pybc8D92/width/900/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/true/ld/false/sri/false/at/auto" width="900px" height="600px" style="border:0px;"> </iframe>
+
+			</section>
+
+			<section>
+			<div class="example">
+				<script type="text/x-sage">
+				load('https://github.com/nimonian/verysmall/raw/gh-pages/rudiments/fp1/calculus/definite_integral_polynomial.sage')
+				</script>
+				</div>
+			</section>
+
 		</section>
 
 

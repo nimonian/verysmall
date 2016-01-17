@@ -1,9 +1,11 @@
 # Define the variables
 
 P = ZZ['x']
-n = randint(2,5)
-k = randint(2,4)
+n = randint(2,3)
 f = P.random_element(degree=n, x=-9, y=9)
+F(x) = f(x).integrate(x)
+a = randint(-5,4)
+b = randint(a,5)
 
 # Define the problem
 
@@ -11,7 +13,9 @@ Prob = []
 
 Prob += ['Compute the following:']
 
-Prob += ['$$\int %s \, dx$$'%(
+Prob += ['$$\\int_{%s}^{%s} %s \\, dx$$'%(
+        a,
+        b,
         latex(f) )]
 
 def problem():
@@ -26,8 +30,21 @@ problem()
 
 Sol = []
 
-Sol += ['$$ %s + c $$'%(
-        latex(f(x).integrate(x)) )]
+Sol += ['$$ \\left[%s\\right]_{%s}^{%s} $$'%(
+        latex(F(x)),
+        a,
+        b )]
+
+Sol += ['$$= \\left( %s \\right) - \\left( %s \\right)'%(
+	latex(F(x)).replace('x','%s'%('('+str(b)+')')),
+	latex(F(x)).replace('x','%s'%('('+str(a)+')')), )]
+
+Sol += ['$$= \\left( %s \\right) - \\left(%s\\right)$$'%(
+	latex(F(b)),
+	latex(F(a)) )]
+
+Sol += ['$$= %s $$'%(
+	latex(F(b)-F(a)) )]
 
 @interact
 def Solution(ShowSolution=checkbox(default=False, label='Solution')):
