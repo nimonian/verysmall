@@ -56,4 +56,4 @@ def Solution(ShowSolution=checkbox(default=False, label='Solution')):
 	if ShowSolution==True:
 		for line in Sol:
 			pretty_print(html(line))
-		pretty_print(html('<br />'))
+			pretty_print(html('<br />'))
