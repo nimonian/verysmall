@@ -36,5 +36,3 @@ def Solution(ShowSolution=checkbox(default=False, label='Solution')):
 		for line in Sol:
 			pretty_print(html(line))
 		pretty_print(html('<br />'))
-		for i in range(20):
-			pretty_print(html('I can count to %s'%(i)))
