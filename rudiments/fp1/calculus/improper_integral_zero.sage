@@ -75,6 +75,7 @@ Sol+=['$$=%s$$'%(
 
 if L == infinity or L == -infinity:
 	Sol+=['There is a term in $a$ with a greater power in the denominator, and so the limit is $%s$ as $a\\rightarrow 0'%(latex(L))]
+	Sol+=['The integral does not converge to a finite value']
 else:
 	Sol+=['All terms involving $a$ have greater powers in the numerator, and so the limit is $%s$ as $a\\rightarrow 0'%(latex(L))]
 @interact

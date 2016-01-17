@@ -97,7 +97,6 @@
 				This still works even when $n$ is not a positive integer!
 					\begin{align*}
 					\int \frac{1}{x\sqrt{x}} \, dx
-						& = \int \frac{1}{x^{\frac{3}{2}}} \, dx \\
 						& = \int x^{-\frac{3}{2}} \, dx \qquad \left(n=-\frac{3}{2}\right) \\
 						& = x^{-\frac{1}{2}} \div \left(-\frac{1}{2}\right) + c \\
 						& = -2x^{-\frac{1}{2}} + c \\
@@ -172,12 +171,14 @@
 				However, as $ b \rightarrow 0 $,
 					$$ \frac{1}{b^{k}} \longrightarrow \infty \qquad \text{but} \qquad b^{k} \longrightarrow 0 $$ </p>
 			<br />
-			<p> The same is true for $a$ </p>
+			<p> If you're not sure, substitute $b=1000$ or $b=0.001$ into your integreated expression to see if your answer makes sense. </p>
 
 			</section>
+		</section>
 
+		<section>
 			<section>
-				
+				<h5> Improper intgerals with $0$ </h5>
 				<p>
 				The second type of improper integral is when $a=0$ or $b=0$, which looks like this:
 					$$ \int_{a}^{0} f(x) \, dx \qquad \text{or} \qquad \int_{0}^{b} f(x) \, dx $$
@@ -195,8 +196,17 @@
 				</script>
 				</div>
 			</section>
-
 		</section>
+
+		<section>
+		<h3> Summary </h3>
+		<ul>
+			<li> Indefinite integration is when no limits are given: $\int f(x) dx $ </li>
+			<li> Improper integration is when one (or both) of the limits is $\infty$ or $0$ </li>
+			<li> Swap the improper limit for $a$ or $b$ and then analyse what happens as they go to $\infty$ or $0$ </li>
+			<li>You must write your limiting statment before your final answer, e.g. <em>as $b\rightarrow 0 \, \ldots $</em></li>
+		</ul>
+
 		</div><!-- slides -->
 	</div><!-- reveal -->
 

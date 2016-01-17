@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	    	tex2jax: {
+	    		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	    		processEscapes:true
+	    	},
+            jax: ["input/TeX","output/HTML-CSS"] });
+	</script>
+
+    <script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+	<meta charset="utf-8">
+
+	<title> S1 Binomial </title>
+	<meta name="description" content="A deck on the topic of integration for FP1">
+	<meta name="author" content="Simon Haines">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="/mathslides/css/math.css">
+	<link rel="stylesheet" href="/mathslides/css/theme/black.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="/mathslides/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/mathslides/css/print/pdf.css' : '/mathslides/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!-- Setting up the sage environments -->
+	<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+	<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+	<script>sagecell.makeSagecell({
+            "inputLocation": ".example",
+            evalButtonText: "Example",
+            hide: ["editor", "permalink"]
+        });
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+
+		<!-- TITLE SLIDE -->
+		<section>
+		<h1> S1 Binomial Distribution </h1>
+		<h3> Objectives: </h3>
+		<ul>
+			<li> Understand the notation $X \sim B(n,p)$ </li>
+			<li> Use the formula to work out probabilities </li>
+			<li> Use the tables to work out cumulative probabilities </li>
+			<li> Deal with inequality signs in cumulative probabilities </li>
+			<li> Deal with $p>0.5$ by considering $q=1-p$ </li>
+			<li> Learn the formulas for the mean and standard deviation of a binomial distribution </li>
+		</ul>
+		</section>
+
+	<!-- MOTIVATION -->
+
+	<!-- FORMULA -->
+
+	<!-- CUMULATIVE -->
+
+	<!-- INEQUALITIES -->
+	<section>
+		<section>
+		<div class="example">
+				<script type="text/x-sage">
+				load('https://github.com/nimonian/verysmall/raw/gh-pages/rudiments/s1/binomial/binomial_basic.sage')
+				</script>
+				</div>
+		</section>
+	</section>
+
+	<!-- INVERSE EVENTS -->
+	<section>
+		<section>
+		<h3> Inverse Events </h3>
+			<p>
+			You may have noticed that your tables only go as far as $p=0.5$. What happens if $p>1.5$?
+			</p>
+
+			<p>
+			In order to deal with this, we must instead consider the inverse event with probability $q = 1-p$. Fortunatley, if $p>0.5$ then $q < 0.5$ and we can use our tables again!
+			</p>
+
+			<p>
+			However, we must be careful! If in $10$ trials we have $7$ successes, then there must be $3$ failures.
+			</p>
+		</section>
+
+		<section>
+		<h5> Translating to failure </h5>
+			<p>
+			If $X$ is the number of successful trials and 
+				$$ X \sim B(n,p) $$ 
+			then we can let $Y$ be the number of failures, so that
+				$$ Y \sim B(n,1-p) $$
+			The one thing to be careful about it changing the information in the question so that it refers to failures instead.
+			</p>
+		</section>
+		
+		<section>
+			<h5> The best method </h5>
+			<p>
+			In general, if there are $k$ successes then there must be $n-k$ failures. We can use this to translate a statement about successes into a statement about failures. If there are $20$ trials and we are interested in $X \leq 12$ successes, then listing the possible outcomes gives:
+				$$ X = 0, 1, 2, \ldots, 11, 12 $$
+				$$ Y = 20, 19, 18, \ldots, 9, 8 $$
+			and we have $ Y \geq 8 $ instead. If $p>0,5$ you should always list the outcomes in this way.
+			</p>
+		</section>
+
+		<section>
+			<div class="example">
+				<script type="text/x-sage">
+				load('https://github.com/nimonian/verysmall/raw/gh-pages/rudiments/s1/binomial/p_too_large.sage')
+				</script>
+				</div>
+		</section>
+	</section>
+
+
+	<!-- MEAN AND SD -->
+
+
+		</div><!-- slides -->
+	</div><!-- reveal -->
+
+	<script src="/mathslides/lib/js/head.min.js"></script>
+	<script src="/mathslides/js/reveal.js"></script>
+
+	<script>
+
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: false,
+
+			transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+			math: {
+					// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/mathslides/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/mathslides/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/mathslides/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/mathslides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: '/mathslides/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/mathslides/plugin/notes/notes.js', async: true }
+			]
+		});
+
+	</script>
+
+</body>
+
+</html>
