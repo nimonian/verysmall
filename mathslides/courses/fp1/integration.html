@@ -65,6 +65,7 @@
 	<div class="reveal">
 		<div class="slides">
 
+		<!-- TITLE SLIDE -->
 		<section>
 		<h1> FP1 Integration </h1>
 		<h3> Objectives: </h3>
@@ -75,6 +76,7 @@
 		</ul>
 		</section>
 
+		<!-- INDEFINITE INTEGRATION -->
 		<section>
 			<section>
 			<h2> Indefinite integration </h2>
@@ -88,7 +90,7 @@
 			</p>
 			</section>
 			<section>
-			<h3> Integrating polynomials </h3>
+			<h4> Integrating polynomials </h4>
 			<p>
 				Remember that a polynomial is a function of the form
 					$$ f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \ldots + a_{2}x^{2} + a_{1}x + a_{0} $$
@@ -97,6 +99,7 @@
 				<br />
 				The rule for integrating $x^{n}$ is
 					$$ \int x^{n} \, dx = \frac{x^{n+1}}{n+1} + c$$
+				This still works even when $n$ is not a positive integer!
 			</p>
 			</section>
 
@@ -110,11 +113,12 @@
 
 		</section>
 
+		<!-- DEFINITE INTEGRATION -->
 		<section>
 
 			<section>
 				
-			<h3> Definite Integration </h3>
+			<h2> Definite Integration </h2>
 			<p> Once the integral has been given <em> limits of integration </em>, we can substitute them to give a numeric answer. This is called <em> definite integration </em>. In general notation, we write:
 				$$ \int_{a}^{b} f(x) \, dx = F(b) - F(a) $$
 			The number $a$ is the <em>lower limit</em> of integration, and the number $b$ the <em>upper limit</em>.</p>
@@ -124,7 +128,7 @@
 
 			<section>
 
-			<h6> Definite Integration </h6>
+			<h4> Definite integration as area</h4>
 				<iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/pybc8D92/width/900/height/600/border/888888/rc/false/ai/false/sdz/false/smb/false/stb/false/stbh/true/ld/false/sri/false/at/auto" width="900px" height="600px" style="border:0px;"> </iframe>
 
 			</section>
@@ -134,14 +138,58 @@
 				<script type="text/x-sage">
 				load('https://github.com/nimonian/verysmall/raw/gh-pages/rudiments/fp1/calculus/definite_integral_polynomial.sage')
 				</script>
-				</div>
+			</div>
 			</section>
 
 		</section>
 
+		<!-- IMPROPER INTEGRALS -->
+		<section>
+			<section>
+			<h1> Improper Integrals </h1>
+			<p> Sometimes, we want to integrate a function all the way along the $x$-axis to $\infty$ or $-\infty$ (for example, in probability). This is the first type of <em>improper integration</em>. Improper integrals with infinity look like
+				$$ \int_{a}^{\infty} f(x) \, dx \qquad \text{or} \qquad \int_{-\infty}^{b} f(x) \, dx $$
+			They are worked out by first finding $\int_{a}^{b} f(x) \, dx$ and then imagine either $a$ or $b$ going to $\pm \infty$</p>
 
-		</div>
-	</div>
+			<p>Although this sounds crazy, it's not always difficult.</p>
+			</section>
+
+			<section>
+				<div class="example">
+				<script type="text/x-sage">
+				load('https://github.com/nimonian/verysmall/raw/gh-pages/rudiments/fp1/calculus/improper_integral_converge.sage')
+				</script>
+				</div>
+			</section>
+
+			<section>
+			<h5> The most important things to remember </h5>
+			<p> For $k>0$, as $ b \rightarrow \infty $,
+					$$ \frac{1}{b^{k}} \longrightarrow 0 \qquad \text{but} \qquad b^{k} \longrightarrow \infty $$
+			<br />
+				However, as $ b \rightarrow 0 $,
+					$$ \frac{1}{b^{k}} \longrightarrow 0 \qquad \text{but} \qquad b^{k} \longrightarrow \infty $$ </p>
+			<br />
+			<p> The same is true for $a$ </p>
+
+			</section>
+
+			<section>
+				
+				<p>
+				The second type of improper integral is when $a=0$ or $b=0$, which looks like this:
+					$$ \int_{a}^{0} f(x) \, dx \qquad \text{or} \qquad \int_{0}^{b} f(x) \, dx $$
+				The problem occurs when $f(x)$ is not defined (i.e. has an asymptote) at $x=0,$ for example $f(x)=\frac{1}{\sqrt{x}}$
+				</p>
+				<p>
+				However, they can be worked out using the same trick as we use for $\pm\infty$
+				</p>
+
+			</section>
+
+		</section>
+		</div><!-- slides -->
+	</div><!-- reveal -->
 
 
 
