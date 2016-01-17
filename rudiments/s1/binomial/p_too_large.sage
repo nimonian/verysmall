@@ -72,7 +72,7 @@ Sol+=['From this we can clearly see that the probability we need is $$P(%s \leq 
 	n-x1
 	)]
 
-Sol+=['We can work this out using the normal methods and looking up the probabilities in the tables for $$Y \sim B(%s,%s)$$'%( n,q )]
+Sol+=['We can work this out using the usual method and looking up the probabilities in the tables for $$Y \sim B(%s,%s)$$'%( n,q )]
 
 y1=n-x2
 y2=n-x1
