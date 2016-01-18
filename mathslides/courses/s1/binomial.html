@@ -18,7 +18,7 @@
 
 	<meta charset="utf-8">
 
-	<title> S1 Binomial </title>
+	<title> S1 - Binomial </title>
 	<meta name="description" content="A deck on the topic of integration for FP1">
 	<meta name="author" content="Simon Haines">
 
@@ -27,18 +27,18 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-	<link rel="stylesheet" href="/mathslides/css/math.css">
-	<link rel="stylesheet" href="/mathslides/css/theme/black.css" id="theme">
+	<link rel="stylesheet" href="/verysmall/mathslides/css/math.css">
+	<link rel="stylesheet" href="/verysmall/mathslides/css/theme/black.css" id="theme">
 
 	<!-- Code syntax highlighting -->
-	<link rel="stylesheet" href="/mathslides/css/zenburn.css">
+	<link rel="stylesheet" href="mathslides/css/zenburn.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement( 'link' );
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/mathslides/css/print/pdf.css' : '/mathslides/css/print/paper.css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'mathslides/css/print/pdf.css' : 'mathslides/css/print/paper.css';
 		document.getElementsByTagName( 'head' )[0].appendChild( link );
 	</script>
 
@@ -150,8 +150,8 @@
 		</div><!-- slides -->
 	</div><!-- reveal -->
 
-	<script src="/mathslides/lib/js/head.min.js"></script>
-	<script src="/mathslides/js/reveal.js"></script>
+	<script src="/verysmall/mathslides/lib/js/head.min.js"></script>
+	<script src="/verysmall/mathslides/js/reveal.js"></script>
 
 	<script>
 
@@ -172,12 +172,12 @@
 
 			// Optional reveal.js plugins
 			dependencies: [
-				{ src: '/mathslides/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/mathslides/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/mathslides/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/mathslides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-				{ src: '/mathslides/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/mathslides/plugin/notes/notes.js', async: true }
+				{ src: 'mathslides/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'mathslides/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'mathslides/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'mathslides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'mathslides/plugin/zoom-js/zoom.js', async: true },
+				{ src: 'mathslides/plugin/notes/notes.js', async: true }
 			]
 		});
 
