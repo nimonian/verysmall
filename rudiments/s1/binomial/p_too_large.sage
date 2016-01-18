@@ -15,12 +15,11 @@ x1=1
 x2=1
 while any([P1==P2, P1 == 1, P1 == 0, P2==1, P2==0, x2-x1<5]):
 	x1 = randint(2,n-2)
-	x2 = randint(x1+2,n)
+	x2 = randint(x1+2,n-1)
 	P1 = float(B.cdf(n-x1))
 	P1 = float('%.4g'%(P1))
 	P2 = float(B.cdf(n-x2))
 	P2 = float('%.4g'%(P2))
-
 # Define the problem
 Prob=[]
 
@@ -67,17 +66,19 @@ To change this into a problem about failure, we compare the possible outcomes fo
 	n-x2
 	)]
 
+y1=n-x2
+y2=n-x1
+
 Sol+=['From this we can clearly see that the probability we need is $$P(%s \leq Y \leq %s)'%(
-	n-x2,
-	n-x1
+	y1,
+	y2
 	)]
 
 Sol+=['We can work this out using the usual method and looking up the probabilities in the tables for $$Y \sim B(%s,%s)$$'%( n,q )]
 
-y1=n-x2
-y2=n-x1
-
-p = float(B.cdf(y2)) - float(B.cdf(y1-1))
+P1 = float(B.cdf(y1-1))
+P2 = float(B.cdf(y2))
+p = P2 - P1
 p = '%.4g'%(p)
 
 Sol+=['The required solution is $%s$'%(p)]
