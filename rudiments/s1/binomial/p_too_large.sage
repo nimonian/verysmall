@@ -20,6 +20,7 @@ while any([P1==P2, P1 == 1, P1 == 0, P2==1, P2==0, x2-x1<5]):
 	P1 = float('%.4g'%(P1))
 	P2 = float(B.cdf(n-x2))
 	P2 = float('%.4g'%(P2))
+	
 # Define the problem
 Prob=[]
 

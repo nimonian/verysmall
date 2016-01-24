@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	    	tex2jax: {
+	    		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+	    		processEscapes:true
+	    	},
+            jax: ["input/TeX","output/HTML-CSS"] });
+	</script>
+
+    <script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+	<meta charset="utf-8">
+
+	<title> S2 Poisson </title>
+	<meta name="description" content="A deck on the topic of the Poisson distribution for S2">
+	<meta name="author" content="Simon Haines">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="/verysmall/mathslides/css/math.css">
+	<link rel="stylesheet" href="/verysmall/mathslides/css/theme/black.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="mathslides/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'mathslides/css/print/pdf.css' : 'mathslides/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!-- Setting up the sage environments -->
+	<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+	<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+	<script>sagecell.makeSagecell({
+            "inputLocation": ".example",
+            evalButtonText: "Example",
+            hide: ["editor", "permalink"]
+        });
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="https://sagecell.sagemath.org/static/sagecell_embed.css">
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+
+	<!-- TITLE SLIDE -->
+	<section>
+	<h1> S2 Poisson Distribution </h1>
+	<h3> Objectives: </h3>
+	<ul>
+		<li></li>
+	</ul>
+	</section>
+
+	<!-- CONDITIONS FOR VALIDITY -->
+	<section>
+		<section>
+		<h3> What does it do? </h3>
+		<p> The Poisson distribution is a <em> discrete probability distribution, </em> similar to the binomial distribution. </p>
+
+		<p> It is used to find the probability of the number of events happening within a given timeframe, such as the number of cars which pass a hotel each hour, or the number of phonecalls received by a hotel every week. </p>
+
+		<p> We need to be familiar with the <em> conditions </em> for a distribution to be valid. </p>
+		</section>
+
+		<section>
+		<h3> Conditions </h3>
+		<p> A Poisson distribution can only be used when the events:
+			<ul>
+				<li>are random</li>
+				<li>are independent</li>
+				<li>occur at a <em>uniform average rate</em> </li>
+			</ul>
+		</p>
+
+		<p> The phrase <em> uniform average rate </em> is a key phrase in this topic and it is often used to justify why the Poisson distiribution should or should not be used. </p>
+		</section>
+
+		<section>
+		<h3> Examples </h3>
+		<p> Here are some situations which may be modelled by the Poisson distribution:
+		<ul>
+			<li>The number of bombs landing on a particular area of a battlefield</li>
+			<li>The number of insurance claims made by homeowners per week</li>
+			<li>The number of white blood cells in a blood sample</li>
+			<li>The number of printing errors in a newspaper</li>
+		</ul>
+		</p>
+		</section>
+
+		<section>
+		<h3>Non-Examples</h3>
+		<p> If we change the situation slightly, then the Poisson distribution may not apply:
+		<ul>
+			<li>The number of bombs landing on an area of a whole country</li>
+			<li>The number of insurance claims during a flood</li>
+			<li>The number of white blood cells from a sample taken near a wound</li>
+			<li>The number of spelling mistakes made by a human</li>
+		</ul>
+		</p>
+		</section>
+	</section>
+
+	<!-- FORMULA -->
+	<section>
+		<section>
+		<h3> The formula </h3>
+
+		<p> The probabilities for the Poisson distribution are given by the formula:
+			\[ P(X=r) = \frac{e^{-\lambda}\lambda^{r}}{r!} \]
+		where \( \lambda \) is the <em>mean</em> or <em>expected value.</em>
+		It is not important to fully understand this formula yet, but you should be able to substitute into it on your calculator.</p>
+
+		<p> The number \( r \) is the number of times we want something to happen (e.g. \(r\) could be the number of bombs, insurance claimes, white blood cells or mistakes, etcetera). </p>
+
+		<p> The values for \(r\) can be chosen infinitely large. </p>
+
+		</section>
+
+		<section>
+		<div class="example">
+				<script type="text/x-sage">
+				</script>
+				</div>
+		</section>
+	
+	</section>
+
+		</div><!-- slides -->
+	</div><!-- reveal -->
+
+	<script src="/verysmall/mathslides/lib/js/head.min.js"></script>
+	<script src="/verysmall/mathslides/js/reveal.js"></script>
+
+	<script>
+
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: false,
+
+			transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+			math: {
+					// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'mathslides/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'mathslides/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'mathslides/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'mathslides/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'mathslides/plugin/zoom-js/zoom.js', async: true },
+				{ src: 'mathslides/plugin/notes/notes.js', async: true }
+			]
+		});
+
+	</script>
+
+</body>
+
+</html>

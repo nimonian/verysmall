@@ -1,0 +1,5 @@
+cd into rudiments:
+$ cd ~/public_html
+
+run the server:
+$ php -S localhost:8000
