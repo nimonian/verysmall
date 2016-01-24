@@ -27,7 +27,9 @@ problem()
 # Define the solution
 Sol=[]
 Sol += ['''
-\\begin{align*} P(X= %s) & = \\frac{e^{%s}%s^{%s}}{%s!} \\\ 
+\\begin{align*} P(X= %s) 
+	& = \\frac{e^{-\\lambda}\\lambda^{r}}{r!} \\\ 
+	& = \\frac{e^{%s}%s^{%s}}{%s!} \\\ 
 	& = %s \\end{align*}'''%(
 	r,
 	latex(-l),
