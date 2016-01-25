@@ -158,6 +158,40 @@
 	</section>
 
 	<!-- MEAN AND VARIANCE -->
+	<section>
+		<section>
+		<h3> Mean and Variance </h3>
+		<p> For the Poisson distribution, the mean and the variance turn out to be equal, so that
+			\[ \mu = \lambda \,\, \text{and} \,\, \sigma^{2} = \lambda \]
+		</p>
+
+		<p> When you are given some data, if you find that $\mu \approx \sigma^{2}$ then it suggests Poisson would be a good model. In any subsequent questions, you should use $\lambda = \mu$. </p>
+		</section>
+
+		<section>
+			<h3>Example</h3>
+			<p> The number of trees which fall down in a forest per month is measured for a year. The total number of trees which has fallen is $\sum x = 38$ and the value of $\sum (x - \bar{x} )^{2}$ is $36.4$ </p>
+			<ol>
+				<li> Justify whether or not this could be modelled by a Poisson distribution </li>
+				<li> Estimate the probability that exactly $2$ trees fall down in a $2$ week period </li>
+			</ol>
+		</section>
+	</section>
+
+	<!-- SUMS OF VARIABLES -->
+	<section>
+		<section>
+		<h3> Combining Events </h3>
+			<p> We can combine events with Poisson distributions by adding together their means. If $X$ and $Y$ are Poisson and have means $\lambda_{1}$ and $\lambda_{2}$ then $X+Y$ is Poisson and has mean $\lambda_{1}+\lambda_{2}$. (Note: $X$ and $Y$ must be independent for this to hold.) </p>
+
+			<p> You may be required to sum several events in order to build the one you are interested in. </p>
+		</section>
+
+		<section>
+		<h3>Example</h3>
+		<p> During the blitz, London was bombed by radio controlled planes. On each day, it was bombed at a consant average rate of 2.2 bombs per day, except on weekends when the average fell to 2 bombs. Find the probability that the number of bombs which fall over a week is greater than $20$ </p>
+		</section>
+	</section>
 
 		</div><!-- slides -->
 	</div><!-- reveal -->
