@@ -155,6 +155,21 @@ html:-moz-full-screen-ancestor {
 .reveal iframe {
   z-index: 1; }
 
+.reveal .stretchy {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.reveal .chessboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /** Prevents layering issues in certain browser/transition combinations */
 .reveal a {
   position: relative; }
