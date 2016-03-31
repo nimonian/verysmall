@@ -1,0 +1,9 @@
+Here are a few supporting notes all about algebra and stuff, including some bullets:
+	\begin{enumerate}
+	\item important!
+	\item Really Important!
+	\end{enumerate}
+
+\begin{example}
+This is an example in algebra!
+\end{example}

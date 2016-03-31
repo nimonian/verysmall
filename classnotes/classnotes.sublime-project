@@ -1,0 +1,23 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.pdf",
+				"*.aux",
+				"*.log",
+				"*.bib",
+				"*.fls",
+				"*.out",
+				"*.synctex.gz",
+				"*.thm",
+				"*.png",
+				"*.PNG",
+				"*.fdb_latexmk",
+				"*.toc",
+			],
+			"path": "."
+		}
+	]
+}

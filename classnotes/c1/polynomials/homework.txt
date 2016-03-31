@@ -1,0 +1,67 @@
+\begin{enumerate}
+
+%Question 1
+\prob 
+The polynomial $p(x)$ is given by $p(x) = x^3 + 4x^2 + x - 6.$
+
+    \begin{enumerate}
+    \prob[2] Use the factor theorem to show that $(x-1)$ is a factor of $p(x).$
+    
+     \prob[2]
+     By dividing $p(x)$ by $(x-1),$ or otherwise, find the quadratic factor of $p(x).$
+     
+     \prob[2]
+     Write $p(x)$ as a product of three linear factors.
+     
+     \prob[3]
+     Sketch the curve $y=p(x),$ indicating the coordinates of the points where is crosses both the $x$ and the $y$ axis.
+    \end{enumerate}
+
+%Question 2
+\prob
+A polynomial $f(x)$ is given by $f(x) = x^3 + ax^2 - 10x - 24,$ where $a$ is a constant.
+    \begin{enumerate}
+    \prob[3]
+    Given that $(x+2)$ is a factor of $f(x),$ find the value of $a.$
+    
+    \prob[3]
+    Factorise $f(x)$ completely.
+    
+    \prob[2]
+    Solve the equation $f(x) = 0.$
+    \end{enumerate}
+
+%Question 3
+\prob
+Find the remainder when the polynomial $q(x) = x^3 - 3x^2 +5x - 7$ is divided by:
+    \begin{enumerate}
+    \prob[1] $(x-1)$ 
+    \prob[1] $(x+2)$ 
+    \prob[1] $x$ 
+    \prob[1] $(x-3)$ 
+    \end{enumerate}
+
+%Question 4
+\prob[3]
+When the polynomial $r(x) = x^3 + 5x^2 -3x + k$ is divided by $(x-2),$ the remainder is $5.$ Find the value of $k.$
+
+%Question 5
+\prob[4]
+When $x^3 + ax^2 + bx + 1$ is divided by $(x+1),$ the remainder is $7;$ when divided by $(x-2)$ the remainder is $19.$ Find the values of $a$ and $b.$
+
+%Question 6
+\prob
+The polynomial $p(x)$ is given by $(x+1)(x^2-4x+5)$
+    \begin{enumerate}
+    \prob[2]
+    Find the remainder when $p(x)$ is divided by $(x-2).$
+    \prob[2]
+    Express $p(x)$ in the form $x^3 + mx^2 + nx + 5,$ stating the values of $m$ and $n.$
+    \prob[2]
+    Show that the equation $x^2 - 4x + 5 = 0$ has no real solutions.
+    \prob[3]
+    Find the coordinates where the curve $y=p(x)$ meets the coordinate axes.
+    \end{enumerate}
+
+
+\end{enumerate}

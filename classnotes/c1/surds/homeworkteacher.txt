@@ -1,0 +1,43 @@
+\begin{enumerate}
+\prob
+Express each of the following in the form $a\sqrt{b}$ where $\sqrt{b}$ can be simplified no further.
+    \begin{enumerate}
+    \prob[1] $\sqrt{45}$
+    \prob[1] $\sqrt{8}$
+    \prob[1] $\sqrt{128}$
+    \prob[1] $\sqrt{256}$
+    \end{enumerate}
+
+\prob
+Express each of the following in the form $a + b\sqrt{2}$ where $a$ and $b$ are rational:
+    \begin{enumerate}
+    \prob[2] $\left(3+\sqrt{2} \right)^{2}$
+    \prob[2] $\left(3 + 5\sqrt{2}\right)\left(4 - 3\sqrt{2}\right)$
+    \prob[3] $\frac{ 10 + \sqrt{8} }{4}$
+    \end{enumerate}
+
+\prob[2]
+Show that $$ \frac{ 2\left(1-2\sqrt{2}\right) - 2}{\sqrt{8}} $$ can be written as an integer.
+
+\prob The function $f(x)$ is defined by
+    \[ f(x) = x^{2} - 3x + 2 \]
+Expressing your answers in the form $m+n\sqrt{3}$, where $m$ and $n$ are integers, find the value of $f(x)$ when:
+    \begin{enumerate}
+    \prob[2] $x = \sqrt{3}$
+    \prob[2] $x = 2\sqrt{3}$
+    \prob[3] $x = \sqrt{3}+1$
+    \end{enumerate}
+
+\prob
+Express the following in the form $a + b\sqrt{2}$ where $a$ and $b$ are integers:
+    \begin{enumerate}
+    \prob[3]
+    $$ \frac{3-2\sqrt{2}}{3+2\sqrt{2}} $$
+    \prob[3]
+    $$ \frac{\sqrt{2}+1}{\sqrt{2}-1} $$
+    \end{enumerate}
+
+\prob[4]
+Solve the inequality $$\sqrt{5}\left( \sqrt{5} - x\right) > 5\sqrt{5} - x $$ giving your solution in the simplest form possible.
+
+\end{enumerate}

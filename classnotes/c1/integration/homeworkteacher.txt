@@ -1,0 +1,72 @@
+\begin{enumerate}
+
+\prob 
+
+Find:
+    \begin{enumerate}
+    \prob[2]
+    $\int 12x \, dx$
+    
+    \prob[2]
+    $\int \left( x^3 + x \right) \, dx$
+    
+    \prob[3]
+    $\int x(x+1) \, dx$
+    
+    \prob[3]
+    $\int (x+6)(x-4) \, dx $
+    
+    \prob[3]
+    $\int \frac{x^5 + 3x^2}{x} \, dx$
+    \end{enumerate}
+
+\newpage %Question 2
+\prob[4]
+The gradient of a curve for each value of $x$ is given by $6x.$ The curve passes through the point $(1,4).$ Use this information to find the equation of the curve.
+
+\newpage %Question 3
+\prob[4]
+You are given that $f^{\prime}(x) = 3x^2-2$ and that $f(-2) = 6.$ Find $f(x).$
+
+\newpage %Question 4
+\prob
+Evaluate the following definite integrals:
+    \begin{enumerate}
+    \prob[2]
+    $\int_{1}^{5} 2x \, dx $
+    \prob[2]
+    $\int_{0}^{2} 3x^2 \, dx$
+    \prob[2]
+    $\int_{-1}^{4} (6-2x) \, dx$
+    \prob[2]
+    $\int_{-2}^{-1} (x^2 + 2x - 1) \, dx$
+    \prob[2]
+    $\int_{2}^{3} (1 + 2x - 3x^2) \, dx$
+    \end{enumerate}
+
+\newpage %Question 5
+\prob
+    \begin{enumerate}
+    \prob
+    For each of the following curves, find the coordinates of the point where the curve crosses the coordinate axes and draw a sketch.
+        \begin{enumerate}
+        \prob[3]
+        $y = 4 + 3x - x^2$
+        \prob[3]
+        $y = x^2 - 4x - 5$
+        \end{enumerate}
+    \prob[6]
+    For each curve, find the area contained between the curve and the $x$ axis. [Hint: for the limits of integration ($a$ and $b$), use the $x$ intercepts of the curve.]
+    \end{enumerate}
+
+\newpage %Question 6
+\prob
+    The curve $y = -3x^2 + 6x$ and the line $y = -3x + 6$ intersect in two points.
+    \begin{enumerate}
+    \prob[3]
+    Find the coordinates of the points of intersection of the line and the curve.
+    \prob[4]
+    Find the area of the region enclosed by the line and the curve. [Hint: Draw a sketch to help.]
+    \end{enumerate}
+
+\end{enumerate}

@@ -1,0 +1,95 @@
+\begin{enumerate}
+
+%Question 1
+\prob
+    \begin{enumerate}
+    \prob[3]
+    Find the equation of the tangent to the curve $y = 2x^2-3$ at the point $(2,5).$ 
+    \prob[2]
+    Find the coordinates of the point where the tangent meets the $x$-axis.
+    \end{enumerate}
+
+% Question 2    
+\prob The normal to the curve $y=x^2-4x$ at the point $(3,-3)$ cuts the $x$-axis at $A$ and the $y$-axis at $B.$
+    \begin{enumerate}
+    \prob[4]
+    Find the equation of the normal.
+    \prob[2]
+    Find the coordinates of $A$ and $B.$
+    \prob[2]
+    Find the area of the triangle $AOB,$ where $O$ is the origin.
+    \end{enumerate}
+
+% Question 3
+\prob[2]
+The curve $y = ax^3 -2x^2 -x + 7$ has a gradient of $3$ at the point where $x=2.$ Determine the value of $a.$
+
+% Question 4
+\prob Let $f(x) = 2x^3 + 3x^2 + 1.$
+    \begin{enumerate}
+    \prob[2]
+    Find $f^{\prime}(x),$ factorising your answer.
+    \prob[5]
+    Hence find the coordinates of the stationary points on the curve and determine their nature.
+    \prob[3]
+    Find the range of values of $x$ for which $f(x)$ is an increasing function.
+    \end{enumerate}
+
+% Question 5
+\prob A curve has equation $y=x^3+x^2-8x+1.$
+    \begin{enumerate}
+    \prob[4]
+    Find $\frac{dy}{dx}$ and $\frac{d^2y}{dx^{2}}$
+    \prob[6]
+    Find the coordinates of the turning points and determine their nature.
+    \prob[3]
+    Draw a sketch of the curve, labelling \emph{only} the turning points and $y$-intercept.
+    \end{enumerate}
+
+% Question 6
+\prob
+The figure shows the plan of a bathing pool in which the width, $x,$ of the paddling region is half the width of the swimming region. The paddling region is a square.
+
+\begin{figure}[ht]
+\centering
+\definecolor{zzccff}{rgb}{0.6,0.8,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\fill[line width=1.6pt,color=zzccff,fill=zzccff,fill opacity=0.1] (-5.,4.) -- (-5.,2.) -- (-3.,2.) -- (-3.,1.) -- (3.,1.) -- (3.,5.) -- (-3.,5.) -- (-3.,4.) -- cycle;
+\draw [line width=1.6pt,color=zzccff] (-5.,4.)-- (-5.,2.) node[color=black, midway, left]{$x$};
+\draw [line width=1.6pt,color=zzccff] (-5.,2.)-- (-3.,2.);
+\draw [line width=1.6pt,color=zzccff] (-3.,2.)-- (-3.,1.);
+\draw [line width=1.6pt,color=zzccff] (-3.,1.)-- (3.,1.) node[color=black, midway, below]{$y$};
+\draw [line width=1.6pt,color=zzccff] (3.,1.)-- (3.,5.) node[color=black, midway, right]{$2x$};
+\draw [line width=1.6pt,color=zzccff] (3.,5.)-- (-3.,5.);
+\draw [line width=1.6pt,color=zzccff] (-3.,5.)-- (-3.,4.);
+\draw [line width=1.6pt,color=zzccff] (-3.,4.)-- (-5.,4.);
+\draw [dashed, line width=1pt,color=zzccff] (-3.,4.)-- (-3.,2.);
+\begin{scriptsize}
+\draw (-4,3) node[align=center, text width=4cm]{paddling \\ region};
+\draw (0,3) node[align=center, text width=4cm]{swimming \\ region};
+\end{scriptsize}
+\end{tikzpicture}
+\end{figure}
+
+\begin{enumerate}
+    \prob[3]
+    Show that the perimeter, $P$, and the area, $A$, are given by the formulas
+        \begin{align*}
+        P & = 6x + 2y \\
+        A & = x^2 + 2xy
+        \end{align*}
+    \prob[2]
+    You are given that the perimeter is $200$m. By substituting an expression for $y,$ show that
+        \[ A  = 200x -5x^2 \]
+     \prob[3]
+     Find $\frac{dA}{dx}$ and determine for which value of $x$ the area $A$ has a stationary value.
+     \prob[3]
+     Determine whether the stationary value found in part (c) is a maximum or minimum.
+     \prob[2]
+     Find the maximum possible area of the pool.
+
+     
+    \end{enumerate}
+
+
+\end{enumerate}

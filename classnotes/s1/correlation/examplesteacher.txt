@@ -1,0 +1,87 @@
+\begin{itemize}
+	\item Correlation is a measure of the strength of the `relationship' or `pattern' between two sets of data
+	\item Usually, the sets of data will be called $x = \left\{x_{1},x_{2}, \ldots , x_{n}\right\}$ and $y = \left\{y_{1},y_{2}, \ldots , y_{n}\right\}$ and may be represented in a table as so:
+
+		\begin{center}
+		\begin{tabular}{c||c|c|c|c}
+		
+		$x$ & $x_{1}$ & $x_{2}$ & $\ldots$ & $x_{n}$ \\ \hline
+		$y$ & $y_{1}$ & $y_{2}$ & $\ldots$ & $y_{n}$ \\ 
+		\end{tabular}
+		\end{center}
+
+	\item A \emph{data point} is a coordinate $(x_{i},y_{i})$ taken from the data and the data points may be plotted on a graph to produce a scatter diagram for the data
+	\item The strength of the correlation is known as the \emph{product moment correlation coefficient} and is usually called $r$. It is always true that $-1 \leq r \leq 1$. The following is a guide to the meaning of the values of $r$:
+		\begin{align*}
+		\text{Strong positive correlation:} & \qquad 0.6 < r \leq 1 \\
+		\text{Moderate positive correlation:} &  \qquad 0.3 < r \leq 0.6 \\
+		\text{Weak positive correlation:} & \qquad 0.1 < r \leq 0.3 \\
+		\text{No correlation:} & \qquad -0.1 \leq r \leq 0.1 \\
+		\text{Weak negative correlation:} & \qquad -0.3 \leq r < -0.1 \\
+		\text{Moderate negative correlation:} & \qquad -0.6 \leq r < -0.3 \\
+		\text{Strong negative correlation:} & \qquad -0.1 \leq r < -0.6 \\
+		\end{align*}
+	\item Importantly, $r$ is only a test for \emph{linear correlation}.There might be a relationship between $x$ and $y$ which is not a straight line!
+
+	\item If you are not given all the raw data, you may have to calculate $r$ using the formula
+		\[ r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}} \]
+	The formula for calculating $S_{xy}, S_{xx}$ and $S_{yy}$ is given in the formula book, should you ever need it.
+
+	\item It is important to understand that positive correlation does not imply causation: two things can be related without one causing the other. Famously, the number of ice-creams sold each month is positively correlated with the number of deaths by drowning in that month. Can you think why?
+
+\end{itemize}
+
+\newpage \begin{example}[Calculating $r$ from raw data]
+The table below gives data on the number of ice-creams sold each month by a newsagent in London $(x)$ and the number of deaths by drowning in that month around the UK $(y)$.
+		
+		\begin{center}
+		\begin{tabular}{c||c|c|c|c|c|c}
+		
+		$x$ & $181$ & $186$ & $197$ & $207$ & $208$ & $230$ \\ \hline
+		$y$ & $54$ & $57$ & $62$ & $65$ & $66$ & $73$ \\ 
+		
+		\end{tabular}
+		\end{center}
+
+\begin{enumerate}
+	\item Calculate the size of the product moment correlation coefficient
+	\item Interpret your value for $r$
+	\item Comment on the claim that `Eating ice-cream causes people to drown'
+\end{enumerate}
+
+\end{example}
+
+\newpage \begin{example}[Outliers]
+
+It is found that in the next month, the newsagent only sold $12$ ice-creams but that there were $77$ deaths by drowning.
+	\begin{enumerate}
+	\item Express this information as a data point
+	\item Recalculate $r$
+	\item Give a new interpretation of $r$
+	\item Comment on the claim that `ice-cream sales and drowning are actually less correlated than previously believed'
+	\end{enumerate}
+\end{example}
+
+\newpage \begin{example}[Interpreting $r$]
+Comment on the likelihood of the following:
+	\begin{enumerate}
+	\item The length of time spent studying and the grade achieved were found to have $r=-0.41$
+	\item The width of a dog's paw and its weight were found to have $r = 0.67$
+	\item The speed of typing and amount of coffee consumed was found to have $r=1.05$
+	\end{enumerate}
+\end{example}
+
+\newpage \begin{example}[Calculating $r$ by formula]
+The cost of a car $(x)$ and the maximum speed of the car $(y)$ are found to have the following summary data:
+	\begin{align*}
+	S_{xx} & = 2417.85 \\
+	S_{yy} & = 47.9 \\
+	S_{xy} & = 30.62
+	\end{align*}
+
+	\begin{enumerate}
+		\item Calculate the product moment correlation coefficient for this data.
+		\item Comment on this value of $r$
+		\item Comment on the claim that `there is no relationship between the cost of a car and the car's maximum speed'
+	\end{enumerate}
+\end{example}

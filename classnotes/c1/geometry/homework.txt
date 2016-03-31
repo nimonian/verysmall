@@ -1,0 +1,135 @@
+\begin{enumerate}
+
+%Question 1
+\prob The points $P$ and $Q$ have coordinates $(-2,1)$ and $(3,-5)$ respectively. Find the following:
+    \begin{enumerate}
+    \prob[1] The midpoint of $PQ$
+    \prob[1] The gradient of $PQ$
+    \prob[2] The length of $PQ$
+    \end{enumerate}
+
+%Question 2
+\prob
+    The line $L_{1}$ has equation $y + 3x = 6$. \\ The line $L_{2}$ is perpendicular to $L_{1}$ and passes through the point $(3,1)$.
+    \begin{enumerate}
+        \prob[2] Draw a sketch of $L_{1}$ and $L_{2}$, indicating the coordinates of the point where $L_{1}$ crosses the coordinate axes.
+        \prob[3] Find an equation for the line $L_{2}$
+    \end{enumerate}
+
+%Question 3
+\prob[3]
+    Find and equation for the line joining the points $(3,2)$ and $(5,12)$. \\ Give your answer in the form $y = ax + b$.
+
+%Question 4
+\prob[4]
+    The line $L_{1}$ has equation $3x+y = 1$ and the line $L_{2}$ has equation $y = 7x - 2$. \\ Find the coordinates of the point of intersection of $L_{1}$ and $L_{2}$.
+
+%Question 6
+\prob
+    The points $A$ and $B$ have coordinates $(5,3)$ and $(9,9)$ respectively. \\ The line $AC$ has equation $2x-3y=1$.
+    \begin{enumerate}
+    \prob[2] Find the gradient of $AB$
+    \prob[3] Determine whether the lines $AB$ and $AC$ are perpendicular
+    \end{enumerate}
+
+%Question 7
+\prob The points $A=(2,5), B=(k,1)$ and $C = (-3,t+1)$ lie in the plane. It is given that $t > 0$.
+    \begin{enumerate}
+    \prob[2] Given that the gradient of $AB$ is equal to $4,$ find the value of $k.$
+    \prob[3] Given that the length of $BC$ is $6\sqrt{2},$ find the value of $t,$ giving your answer in the form $n\sqrt{p_{1}}\sqrt{p_{2}}$ where $p_{1}$ and $p_{2}$ are prime numbers.
+    \end{enumerate}
+
+%Question 8
+\prob
+    The points $P$ and $Q$ have the coordinates $(3,-5)$ and $(1,1)$ respectively.
+    \begin{enumerate}
+    \prob[3]
+        Find the equation of the line $PQ$ in the form $ax + by + c = 0$
+    \prob[4]
+        Find the equation of the perpendicular bisector of $PQ$
+    \end{enumerate}
+
+ \begin{flushright} \textbf{
+        [Questions continued overleaf.]}
+    \end{flushright}
+
+\newpage
+%Question 9
+\prob[4]
+    The polygon $ABCD$ is a kite. The point $A$ has coordinates $(0,4)$ and the point $C$ has coordinates $(8,0)$.
+        \begin{figure}[ht] \centering
+        \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+    \draw[->,color=black] (-0.66,0.) -- (9.54,0.);
+    \foreach \x in {,1.,2.,3.,4.,5.,6.,7.,8.,9.}
+    \draw[shift={(\x,0)},color=black] (0pt,-2pt);
+    \draw[->,color=black] (0.,-3.42) -- (0.,4.72);
+    \foreach \y in {-3.,-2.,-1.,1.,2.,3.,4.}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+    \clip(-0.66,-3.42) rectangle (9.54,4.72);
+    \fill[fill=black,fill opacity=0.1] (0.,4.) -- (4.672,3.344) -- (8.,0.) -- (1.464,-3.072) -- cycle;
+    \draw (0.,4.)-- (4.672,3.344);
+    \draw (2.34851422791393,3.761125720752868) -- (2.3234857720860704,3.582874279247132);
+    \draw (4.672,3.344)-- (8.,0.);
+    \draw (6.399792039853935,1.7354868147828648) -- (6.272207960146063,1.608513185217135);
+    \draw (8.,0.)-- (1.464,-3.072);
+    \draw (4.801958999468343,-1.60256379190963) -- (4.725392361145932,-1.4396602931872111);
+    \draw (4.738607638854069,-1.6323397068127896) -- (4.662041000531658,-1.4694362080903705);
+    \draw (1.464,-3.072)-- (0.,4.);
+    \draw (0.6509636512373277,0.41148228699558104) -- (0.8272264332087094,0.44797107557110394);
+    \draw (0.6367735667912916,0.4800289244288956) -- (0.8130363487626733,0.5165177130044185);
+    \begin{scriptsize}
+    \draw [fill=black] (0.,4.) circle (1.5pt);
+    \draw[color=black] (0.68,4.28) node {$A = (0, 4)$};
+    \draw [fill=black] (8.,0.) circle (1.5pt);
+    \draw[color=black] (8.62,0.4) node {$C = (8, 0)$};
+    \draw [fill=black] (4.672,3.344) circle (1.5pt);
+    \draw[color=black] (4.94,3.54) node {$D$};
+    \draw [fill=black] (1.464,-3.072) circle (1.5pt);
+    \draw[color=black] (1.58,-2.78) node {$B$};
+    \end{scriptsize}
+    \end{tikzpicture}
+        \end{figure}
+
+Find the equation of the diagonal $BD$.
+
+%Question 8
+\prob
+    The polygon $ABCD$ is a rectangle. The point $A$ has coordinates $(0,4)$ and the point $C$ has coordinates $(11,1)$. The line segment $AB$ has gradient $-5$. 
+    \begin{figure}[ht] \centering
+    \definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\draw[->,color=black] (-0.74,0.) -- (12.48,0.);
+\foreach \x in {,1,2,3,4,5,6,7,8,9,10,11,12}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-1.32) -- (0.,6.38);
+\foreach \y in {-1,1,2,3,4,5,6}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.74,-1.32) rectangle (12.48,6.7);
+\fill[color=black,fill=black,fill opacity=0.1] (0.,4.) -- (10.,6.) -- (11.,1.) -- (1.,-1.) -- cycle;
+\draw [color=black] (0.,4.)-- (10.,6.);
+\draw [color=black] (10.,6.)-- (11.,1.);
+\draw [color=black] (11.,1.)-- (1.,-1.);
+\draw [color=black] (1.,-1.)-- (0.,4.);
+\begin{scriptsize}
+\draw [fill=black] (11.,1.) circle (1.5pt);
+\draw[color=black] (11.52,0.76) node {$C = (11, 1)$};
+\draw [fill=black] (0.,4.) circle (1.5pt);
+\draw[color=black] (0.72,4.5) node {$A = (0, 4)$};
+\draw [fill=black] (1.,-1.) circle (1.5pt);
+\draw[color=black] (1.14,-0.66) node {$B$};
+\draw [fill=black] (10.,6.) circle (1.5pt);
+\draw[color=black] (10.14,6.28) node {$D$};
+\end{scriptsize}
+\end{tikzpicture}
+
+    
+    \end{figure}
+    
+    \begin{enumerate}
+        \prob[3] Find the equations of the sides $AB$ and $BC$
+        \prob[3] Prove that the coordinates of $B$ are $(1,-1)$
+        \prob[4] Find the area of the rectangle
+    \end{enumerate}
+\end{enumerate}

@@ -1,0 +1,43 @@
+\begin{enumerate}
+
+\newpage %Question 1
+\prob[4]
+Find the coordinates of the points of intersection between the curve $$y=x^{2} - 2$$ and the line $$y = -2 \, x - 2$$
+
+\newpage %Question 2
+\prob
+    \begin{enumerate}
+    \prob
+    State, with a reason, the number of points of intersection between the curve $$ y = -x^{2} -x + 1$$ and the lines:
+        \begin{enumerate}
+        \prob[2] $y = x - 1$
+        \prob[2] $ y = x + 4$
+        \end{enumerate}
+    \prob[4]
+    Find the value of $k$ for which the line $$y = x+k$$ is a tangent to the curve with equation $$y = -x^{2} - x + 1$$
+    
+    \end{enumerate}
+
+\newpage %Question 3
+\prob
+    \begin{enumerate}
+        \prob[3]
+        Solve the equation $$3x^{2} + 4x - 5 = 0$$ giving your answers in surd form.
+        \prob[3]
+        Hence, solve the quadratic inequality $$3x^{2} + 4x - 5 > 0$$
+    \end{enumerate}
+
+\newpage %Question 4
+\prob[4]
+Find the range of possible values of $k$ for which the equation $$ 2x^{2} + (3-k)x + (k+3) = 0 $$ has no real solutions.
+
+\newpage %Question 5
+\prob
+It is given that the curve with equation $$ y = x^{2} {\left(z - 3\right)} + x + 2 $$ intersects with the line $$ y = 3 \, x + (z + 3) $$ in two distinct points ($z$ is an unknown constant).
+    \begin{enumerate}
+    \prob[4]
+    By considering the discriminant, show that $z$ must satisfy the inequality $$ z^{2} - 2 \, z - 2 > 0 $$
+    \prob[4]
+    By solving this inequality, find the range of possible values of $z$.
+    \end{enumerate}
+\end{enumerate}

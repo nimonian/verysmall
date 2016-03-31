@@ -1,0 +1,82 @@
+\begin{itemize}
+    \item The regression line is just a line of best fit through the middle of the data. Since it is a straight line, it has the form
+        $$ \hat{y} = a + b\hat{x} $$
+    where $a$ is the $y$-intercept and $b$ is the gradient of the line.
+    \item We use $\hat{y}$ and $\hat{x}$ to say that these are \emph{predicted} data points. The \emph{actual} data points $(x_{i},y_{i})$ may not lie on the line at all, but they should be close to the line.
+    \item The \emph{residuals} are the distance bewteen a real $y_{i}$ and a predicted $\hat{y}$ - they tell us how close the line is to the real data. The residual for the $i^{\text{th}}$ data point is given by
+        $$ r_{i} = y_{i} - \hat{y} $$
+    \item When asked to interpret $b$, you should always refer to what happends when $\hat{x}$ increases by $1$ unit; when asked to interpret $a$ you should explain what happens when $\hat{x}=0$. You should always use the language given in the question - don't just say $x$ and $y$.
+    \item It is always true that $$\sum r_{i} = 0$$ meaning that the sum of the residuals is zero.
+\end{itemize}
+
+\begin{example}[Calculating a regression line]
+
+The following data give the fastest running times $(x)$ for the olympics women's $100\text{m}$ sprint over the past 10 years $(y)$:
+    \begin{center}
+    \begin{tabular}{c||c|c|c|c|c}
+    $x$ & $1996$ & $2000$ & $2004$ & $2008$ & $2012$ \\ \hline
+    $y$ & $11.1$ & $10.94$ & $10.93$ & $10.78$ & $10.75$ \\ 
+    \end{tabular}
+    \end{center}
+
+Calculate the equation of the least squares regression line of $y$ on $x$
+
+\end{example}
+
+
+\begin{example}[Interpreting the gradient]
+    \begin{enumerate}
+    \item For the regression line you have calculated above, give an interpretation of value of $b$ within the context of the question.
+    \item It is calculated that, for men, the regression line has equation $\hat{y} = 49.84 - 0.02\hat{x}$. Make a comparison between the value of $b$ for men and for women.
+    \item Interpret your comparison within the context of the question.
+    \end{enumerate}
+\end{example}
+
+\begin{example}[Extrapolation and Interpolation]
+    \begin{enumerate}
+    \item For the women's regression line you have calculated above, find an estimate for the winning running time if the competition were held in $2002$
+    \item Also find an estimate for the winning time in the year $2400$
+    \item Which of the two estimates above is more reliable than the other? Explain your answer.
+    \item If the linear trend continues, in what year should we expect to see a running time of $10$ seconds for women? Comment on the validity of your answer.
+    \end{enumerate}
+\end{example}
+
+\begin{example}[Residuals]
+    The following data shows the number of people who die by falling down the stairs $(x)$ against sales of the iPhone in millions $(y)$:
+    \begin{center}
+    \begin{tabular}{c||c|c|c|c}
+    $x$ & $1927$ & $1935$ & $1960$ & $1991$ \\ \hline
+    $y$ & $1.39$ & $11.63$ & $20.73$ & $39.99$ \\ 
+    \end{tabular}
+    \end{center}
+
+    \begin{enumerate}
+        \item Calculate the equation of the least squares regression line
+        \item Interpret your values for $a$ and $b$ in the context of the question
+        \item Assuming that $1980$ people fall down the stairs in the next year, find an estimate for the number of iPhone sales
+        \item Calculate the residuals $r_{3}$ and $r_{4}$
+        \item By considering the average of these residuals, improve the estimate you gave in part 3.
+        \item Explain why the average of all the $r_{i}$ has not been used to improve the estimate in part 3.
+    \end{enumerate}
+\end{example}
+
+\begin{example}[Exam style question]
+In an experiment, it is found that the computing speed $y\text{GHz}$ is related to the temperature $x \, ^{\circ} \text{C}$ of the processor of a computer by the regression formula
+    $$ \hat{y} = 4.2 - 0.023\hat{x} $$
+    \begin{enumerate}
+    \item Interpret the regression line in the context of the data
+    \item Estimate the computing speed of a computer processor at $27^{\circ}\text{C}$
+    \item Given that the greatest temperature a computer was tested at was $25^{\circ}\text{C}$, comment of the validity of the estimate obatined above.
+    \item The table below represents \textbf{some} of the data collected.
+        \begin{center}
+        \begin{tabular}{c||c|c|c|c|c}
+        \textbf{$x$} & 5   & 10  & 15   & 20   & 25  \\ \hline
+        \textbf{$y$} & 4.1 & 3.9 & 3.86 & 3.72 & 3.6 \\
+        \end{tabular}
+        \end{center}
+    Calculate the mean of the residuals from this data.
+    \item Use this to improve the estimate obtained in question 2.
+    \item Given that there was only one other computer which was tested, and that this computer was tested at $0^{\circ}\text{C}$, find the real processing speed of a computer at freezing.
+    
+    \end{enumerate}
+\end{example}

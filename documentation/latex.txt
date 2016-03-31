@@ -1,0 +1,5 @@
+To add your own sty to latex:
+	1. Go to /usr/share/texmf/tex/latex
+	2. Make or find the directory called 'local'
+	3. Add your .sty file
+	4. Open a terminal and run the command 'sudo texhash'

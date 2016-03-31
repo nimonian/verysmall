@@ -1,0 +1,449 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prob",
+				"probEx"
+			],
+			[
+				"create",
+				"create_course"
+			],
+			[
+				"exerci",
+				"exercisetemplate"
+			],
+			[
+				"quiz",
+				"quizFile"
+			],
+			[
+				"P",
+				"P"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"p",
+				"P"
+			],
+			[
+				"next",
+				"nextprime"
+			],
+			[
+				"is",
+				"isspecial"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"s",
+				"s"
+			],
+			[
+				"X",
+				"X"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"PROBLEM",
+				"PROBLEM"
+			],
+			[
+				"pr",
+				"pretty_print"
+			],
+			[
+				"solutio",
+				"SOLUTION"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "import os, re\n\ndef create_course(course):\n	coursedir = './%s'%(course)\n	if not os.path.exists(coursedir):\n		os.mkdir(coursedir)\n		print 'Course directory created: %s'%(course)\n	else:\n		print 'Course already exists: %s'%(course)\n		return\n\n	masterfile = coursedir + '/%s.tex'%(course)\n\n	mastertemplate = r'''\\documentclass[12pt]{article}\n\\usepackage{classnotes}\n\\usepackage{subfiles}\n\n\n\\title{A Level Mathematics \\\\ %s}\n\\author{}\n\\date{}\n\n\\begin{document}\n\n\\pagenumbering{gobble}\n\n\\maketitle\n\n\\begin{center}\n\\includegraphics[width=8cm]{../jcclogo.PNG}\n\\end{center}\n\n\\newpage\n\n\\thispagestyle{plain}\n\\tableofcontents\n\n\\end{document}'''%(course.upper())\n\n	if not os.path.exists(masterfile):\n		f = file(masterfile, 'w+')\n		f.write(mastertemplate)\n		f.close()\n		print 'Master file created: %s.tex'%(course)\n\ndef create_topic(course,topic):\n	coursedir = './%s'%(course)\n	topicdir = 	coursedir + '/%s'%(topic)\n	materials = ['examples', 'exercises', 'proofs', 'homework', 'test']\n\n	testtemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Assessment}\n\\thispagestyle{fancy}\n\n\\input{/home/simon/io/verysmall/classnotes/%s/%s/test.txt}\n\n\\begin{flushright}\n\\textbf{Total marks: []}\n\\end{flushright}\n\n\\end{document}'''%(course, topic[0].upper() + topic[1:],course,topic)\n\n	homeworktemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Assessed Homework}\n\\thispagestyle{fancy}\n\n\\input{/home/simon/io/verysmall/classnotes/%s/%s/homework.txt}\n\n\\begin{flushright}\n\\textbf{Total marks: []}\n\\end{flushright}\n\n\\end{document}'''%(course, topic[0].upper() + topic[1:],course,topic)\n\n	exercisetemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Exercises}\n\\thispagestyle{fancy}\n\n\\input{/home/simon/io/verysmall/classnotes/%s/%s/exercises.txt}\n\n\\end{document}'''%(course, topic[0].upper() + topic[1:],course,topic)\n\n	examplestemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Examples}\n\\thispagestyle{fancy}\n\n\\input{/home/simon/io/verysmall/classnotes/%s/%s/examples.txt}\n\n\\end{document}'''%(course, topic[0].upper() + topic[1:], course, topic)\n\n	proofstemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Proofs}\n\\thispagestyle{fancy}\n\n\\begin{theorem}[]\n\n\\end{theorem}\n\\end{document}'''%(course, topic[0].upper() + topic[1:])\n\n	if not os.path.exists(coursedir):\n		return 'Error - No such course exists: %s'%(course)\n\n	if not os.path.exists(topicdir):\n		os.mkdir(topicdir)\n		print 'Topic directory created: %s'%(topic)\n\n		masterfile = open(coursedir + '/%s.tex'%(course), 'r')\n		mastercontent = masterfile.read()\n		masterfile.close()\n\n		mastercontent = mastercontent.replace(r'\\end{document}',r'''\n			\\newpage\n			\\section{%s}\n\n			\\end{document}'''%(topic[0].upper() + topic[1:]))\n\n		masterfile = open(coursedir + '/%s.tex'%(course), 'w')\n		masterfile.write(mastercontent)\n		masterfile.close()\n\n	else:\n		print 'Topic already exists: %s'%(topic)\n	\n	for m in materials:\n		mpath = topicdir + '/%s.tex'%(m)\n\n		if not os.path.exists(mpath):\n			masterfile = open(coursedir + '/%s.tex'%(course), 'r')\n			mastercontent = masterfile.read()\n			masterfile.close()\n			\n			mastercontent = mastercontent.replace(r'\\end{document}',r'''\n				\\newpage\n				\\subfile{%s}\n\n				\\end{document}'''%(r'./%s/%s.tex'%(topic,m)))\n\n			masterfile = open(coursedir + '/%s.tex'%(course), 'w')\n			masterfile.write(mastercontent)\n			masterfile.close()\n\n	\n		f = file(mpath, 'w+')\n		if not os.path.exists(mpath.replace('tex','txt')):	\n			g = file(mpath.replace('tex','txt'),'w+')\n		\n		if m == 'homework':\n			f.write(homeworktemplate)\n		if m == 'exercises':\n			f.write(exercisetemplate)\n		if m == 'examples':\n			f.write(examplestemplate)\n		if m == 'proofs':\n			f.write(proofstemplate)\n		if m == 'test':\n			f.write(testtemplate)\n			\n		f.close()\n		print 'Material created: %s.tex'%(m)\n\ndef calculate_totals():\n	probEx = re.compile(r'(\\prob\\[)(\\d)')\n	for path in os.walk(os.path.abspath('.')):\n		for base in path[2]:\n			if base in ['homework.txt','test.txt']:\n				total = 0\n				file = path[0] + '/' + base\n\n				f = open(file, 'r')\n				content = f.read()\n\n				if probEx.findall(content):\n					for prob in probEx.findall(content):\n						total += int(prob[1])\n\n				f.close()\n\n				file = file.replace('.txt','.tex')\n\n				f = open(file, 'r')\n				content = f.read()\n				f.close()\n\n				f = open(file, 'w')\n\n				content = re.sub(r'Total marks: \\[.*\\]',r'Total marks: [%s]'%(total),content)\n\n				f.write(content)\n				f.close()\n\nteacher_materials():\n\n\nS1 = ['measures', 'probability', 'binomial', 'correlation', 'regression', 'normal', 'confidence']\nC1 = ['algebra','surds','geometry','quadratics1','quadratics2','polynomials','circles','differentiation','integration']\n\ncreate_course('s1')\n\nfor course in S1:\n	create_topic('s1',course)\n\ncalculate_totals()\n",
+			"file": "classnotes.py",
+			"file_size": 4806,
+			"file_write_time": 131038837463357156,
+			"settings":
+			{
+				"buffer_size": 4832,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/simon/io/verysmall/classnotes"
+	],
+	"file_history":
+	[
+		"/home/simon/Documents/coursera/webdesign/fullstack-course4/Assignments/README-FIRST.txt",
+		"/home/simon/io/verysmall/classnotes/classnotes.py",
+		"/home/simon/io/verysmall/classnotes/c1/c1.tex",
+		"/home/simon/io/verysmall/classnotes/c1/surds/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/quadratics2/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/quadratics1/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/polynomials/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/integration/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/geometry/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/differentiation/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/circles/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/algebra/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/algebra/examples.tex",
+		"/home/simon/io/verysmall/classnotes/c1/quadratics_2/test.tex",
+		"/home/simon/io/verysmall/classnotes/c1/quadratics_2/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c1/quadratics_1/homework.txt",
+		"/home/simon/io/verysmall/classnotes/classnotes.sublime-project",
+		"/home/simon/io/verysmall/classnotes/c2/differentiation/exercises.tex",
+		"/home/simon/io/verysmall/classnotes/c2/c2.tex",
+		"/home/simon/io/verysmall/classnotes/c2/differentiation/homework.tex",
+		"/home/simon/io/verysmall/classnotes/c2/logarithms/homework.tex",
+		"/home/simon/io/verysmall/classnotes/c2/logarithms/homework.txt",
+		"/home/simon/io/verysmall/classnotes/c2/logarithms/exercises.txt",
+		"/home/simon/io/verysmall/classnotes/c2/arithmetic sequences/examples.tex",
+		"/home/simon/io/verysmall/classnotes/c2/arithmetic sequences/examples.txt",
+		"/home/simon/io/verysmall/classnotes/c2/transformations/homework.tex",
+		"/home/simon/io/verysmall/classnotes/changer.py",
+		"/home/simon/io/verysmall/classnotes/bananas.txt",
+		"/home/simon/io/verysmall/classnotes/classnotes.sty",
+		"/home/simon/io/verysmall/documentation/latex.txt",
+		"/home/simon/io/verysmall/classnotes/c1/c1.log",
+		"/home/simon/io/verysmall/classnotes/c1/classnotes.sty",
+		"/home/simon/io/verysmall/classnotes/c1/algebra/exercises.tex",
+		"/home/simon/io/verysmall/classnotes/c1/algebra/homework.tex",
+		"/home/simon/io/verysmall/classnotes/c1/c1.thm",
+		"/home/simon/io/verysmall/documentation/github.txt",
+		"/home/simon/Documents/LaTeX/aqac2/Arithmetic_Notes.tex",
+		"/home/simon/.config/sublime-text-3/Packages/User/LaTeXTools.sublime-settings",
+		"/home/simon/Documents/LaTeX/aqac2/Applications.tex",
+		"/home/simon/Dropbox/Maths/Calculus/Spivak/Solutions/Solutions.tex",
+		"/home/simon/Documents/LaTeX/test.tex",
+		"/home/simon/Documents/LaTeX/opening.py",
+		"/home/simon/Documents/LaTeX/capitalsquiz2.txt",
+		"/home/simon/Documents/pytest.py",
+		"/home/simon/Documents/Project Euler/nimon064.py",
+		"/home/simon/Documents/Project Euler/problem062/nimon062.py",
+		"/home/simon/Documents/Project Euler/problem061/nimon061.py",
+		"/home/simon/Documents/Project Euler/problem061/euler.py",
+		"/home/simon/Documents/Project Euler/problem60/test.py",
+		"/home/simon/Documents/Project Euler/problem60/nimon60.py",
+		"/home/simon/Documents/Project Euler/problem60/philip_robinson060.py",
+		"/home/simon/Documents/Project Euler/problem60/nimon059.py",
+		"/home/simon/Documents/Project Euler/euler.py",
+		"/home/simon/Documents/Project Euler/problem059/timothy060.py",
+		"/home/simon/Documents/Project Euler/problem059/pe60.py",
+		"/home/simon/Documents/Project Euler/nimon058.py",
+		"/home/simon/lamp/apps/vsmall/htdocs/index.php",
+		"/etc/apache2/apache2.conf",
+		"/etc/apache2/ports.conf",
+		"/var/www/html/index.html",
+		"/home/simon/io/verysmall/mathslides/css/math.css",
+		"/home/simon/io/verysmall/mathslides/courses/fp1/chess.html",
+		"/home/simon/io/verysmall/mathslides/courses/fp1/integration.html",
+		"/home/simon/io/verysmall/mathslides/courses/fp1/chess2.html",
+		"/home/simon/io/verysmall/mathslides/demo.html",
+		"/home/simon/Downloads/cesarosum_vs_davidStrubeck_2016_02_10.pgn",
+		"/home/simon/io/verysmall/mathslides/courses/s2/poisson.html",
+		"/home/simon/Documents/nimon055.py",
+		"/home/simon/io/verysmall/rudiments/s2/poisson/poisson_table.sage",
+		"/home/simon/io/verysmall/rudiments/s1/binomial/binomial_basic.sage",
+		"/home/simon/io/verysmall/rudiments/s2/poisson/poisson_formula_gt.sage",
+		"/home/simon/io/verysmall/rudiments/s2/poisson/poisson_formula.sage",
+		"/home/simon/io/verysmall/rudiments/fp1/calculus/definite_integral_polynomial.sage",
+		"/home/simon/io/verysmall/rudiments/s2/poisson_formula.sage",
+		"/home/simon/io/verysmall/rudiments/fp1/calculus/improper_integral_zero.sage",
+		"/home/simon/io/verysmall/rudiments/fp1/calculus/improper_integral_converge.sage",
+		"/home/simon/io/verysmall/rudiments/s1/binomial/p_too_large.sage",
+		"/home/simon/io/verysmall/rudiments/instructions.txt",
+		"/home/simon/io/verysmall/mathslides/courses/s1/binomial.html",
+		"/home/simon/Desktop/Order Confirmation, Boots.html",
+		"/home/simon/verysmall/layout/darkly.css",
+		"/home/simon/verysmall/rudiments/index.php",
+		"/home/simon/verysmall/index.html",
+		"/home/simon/verysmall/mathslides/courses/fp1/integration.html",
+		"/home/simon/verysmall/rudiments/s1/binomial/p_too_large.sage",
+		"/home/simon/verysmall/mathslides/courses/s1/binomial.html",
+		"/home/simon/verysmall/rudiments/s1/binomial/binomial_basic.sage",
+		"/home/simon/verysmall/rudiments/fp1/calculus/improper_integral_zero.sage",
+		"/home/simon/verysmall/rudiments/s1/binomial_basic.sage",
+		"/home/simon/verysmall/rudiments/fp1/calculus/improper_integral_converge.sage",
+		"/home/simon/verysmall/rudiments/fp1/calculus/improper_integral_zero",
+		"/home/simon/verysmall/mathslides/css/reveal.css",
+		"/home/simon/verysmall/mathslides/css/math.css",
+		"/home/simon/verysmall/rudiments/fp1/calculus/definite_integral_polynomial.sage",
+		"/home/simon/verysmall/rudiments/designer.css",
+		"/home/simon/Documents/WordPress/apps/wordpress/htdocs/wp-content/plugins/sage-cell/sage_cell.php",
+		"/home/simon/verysmall/rudiments/fp1/calculus/indefinite_integral_polynomial.sage",
+		"/home/simon/verysmall/rudiments/designer.php",
+		"/home/simon/verysmall/rudiments/c2/trigonometry/solving_equations/basic_equation_degrees.sage",
+		"/home/simon/verysmall/index.php",
+		"/home/simon/verysmall/designer.php",
+		"/home/simon/verysmall/lamp/apps/vsmall/htdocs/includes/header.php",
+		"/home/simon/verysmall/lamp/apps/vsmall/htdocs/designer.php",
+		"/home/simon/Documents/mathslides/css/math.css",
+		"/home/simon/Documents/mathslides/css/reveal.css",
+		"/home/simon/Documents/mathslides/test/examples/math.html",
+		"/home/simon/Documents/mathslides/demo.html",
+		"/home/simon/Documents/mathslides/fromscratch.html",
+		"/home/simon/Documents/mathslides/indefinite_integral_polynomial.sage",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/designer.php",
+		"/home/simon/Documents/mathslides/index.html",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/SAGE_auto_problems/c1/integration/undoing_differentiation/integrate_to_find_equation.sage",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/SAGE_auto_problems/c1/integration/undoing_differentiation/improper_integration.sage",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/SAGE_auto_problems/c1/algebra/cancel_common_factors_1.sage",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/problem_designer.php",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/includes/header.php",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/mathjaxer.php",
+		"/home/simon/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/simon/.config/sublime-text-3/Packages/User/Plain text.sublime-settings",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/index.php",
+		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/SAGE_auto_problems/c1/algebra/an_auto_problem.sage",
+		"/home/simon/Documents/web2py/applications/vsmall/views/default/mathjaxer.html",
+		"/home/simon/Documents/web2py/applications/vsmall/controllers/course.py",
+		"/home/simon/Documents/web2py/applications/vsmall/views/course/index.html",
+		"/home/simon/Documents/web2py/applications/vsmall/controllers/maas.py",
+		"/home/simon/Documents/web2py/applications/vsmall/views/course/maas/index.html",
+		"/home/simon/Documents/web2py/applications/vsmall/controllers/problem.py",
+		"/home/simon/Documents/web2py/applications/vsmall/views/default/index.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"section*",
+			"Marks",
+			"iframe",
+			"<li>",
+			"li",
+			"li>",
+			"<li>",
+			"<li",
+			"<li>",
+			"/ma",
+			"definite",
+			"\\qquad",
+			"$.*$",
+			"$",
+			"text-align",
+			"section",
+			"font",
+			"Midpoint"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"section",
+			"<li class=\"fragment\">",
+			"",
+			"Solution",
+			"Hint"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "classnotes.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4138,
+								4138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3332.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 202.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "classnotes.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 178.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

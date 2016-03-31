@@ -1,0 +1,58 @@
+\begin{enumerate}
+\prob
+    \begin{enumerate}
+        \prob[2]
+        Factorise the expression $6x^{2} - x - 5$
+    
+        \prob[4]
+        Hence draw a sketch of the curve $y = 6x^{2} - x - 5,$ stating the coordinates of the points where the curve crosses the $x$ and $y$ axes.
+        
+    \end{enumerate}
+
+%Question 2
+\prob
+    \begin{enumerate}
+    \prob[2]
+    Express $x^{2} + 12x + 5$ in the form $(x+a)^{2} + b,$ stating the values of $a$ and $b$
+    
+    \prob[1]
+    Hence state the minimum value of $x^{2} + 12x + 5$ and the value $x$ at which it occurs.
+    
+    \prob[3]
+    Draw a sketch of the graph of $y = x^{2} + 12x + 5$ stating the coordinates of the point where it crosses the $y$ axis. Label the coordinates of the vertex of the parabola on your graph.
+    \end{enumerate}
+
+%Question 3
+\prob
+State with a reason the number of real solutions to each equation:
+    \begin{enumerate}
+    \prob[2] $x^{2} - 3x + 1 = 0$
+    \prob[2] $-x^{2} + 6x - 9 = 0$
+    \prob[2] $-3x^{2} + 5x - 3 = 0$
+    \end{enumerate}
+
+%Question 4
+\prob[4]
+Determine the values of $k$ for which the equation
+    \[ x^{2} + 3(k-2)x +  (k+5) = 0 \]
+has equal roots.
+
+%Question 5
+\prob
+    \begin{enumerate}
+    \prob[3]
+    Express $2x^{2} -8x + 5$ in the form $p(x+q)^{2} + r,$ stating the values of $p,q$ and $r$.
+    \prob[1]
+    Hence write down the coordinates of the vertex of the curve given by $y = 2x^{2} - 8x + 5.$
+    \prob[3]
+    Describe fully the single transformation from which the curve $y = 2x^{2} - 8x + 5$ may be obtained from the curve $y = x^{2}$.
+    \end{enumerate}
+
+%Question 6
+\prob[5] Sketch the curve $y = -4x^{2} + 4x + 3$ indicating the coordinates of all points where the curve crosses the coordinate axes and the coordinates of the vertex of the curve.
+
+%Question 7
+\prob[4]
+Using the quadratic formula, find both values of $p$ which satisfy the equation $$ 2 \, p^{2} + 2 \, p - 5 = 0 $$ Show that your solutions can be given in the form $$ p = \frac{-1 \pm \sqrt{k} }{2} $$ where $k$ is a prime number, stating the value of $k$.
+
+\end{enumerate}
