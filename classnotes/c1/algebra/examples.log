@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.13)  30 MAR 2016 21:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.13)  9 APR 2016 15:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1032,7 +1032,7 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 \c@endfproofctr=\count187
 \c@fproof=\count188
 )))
-(./examples.aux)
+No file examples.aux.
 \openout1 = `examples.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -1049,12 +1049,13 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 4.
 LaTeX Font Info:    Try loading font information for MDA+cmr on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdacmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 4.
 LaTeX Font Info:    Try loading font information for MDB+cmr on input line 4.
+
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
 File: mdbcmr.fd 
 )
@@ -1162,7 +1163,90 @@ LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
 (Font)              scaled to size 13.53603pt on input line 6.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
 (Font)              scaled to size 13.53603pt on input line 6.
-(./examples.txt)
+(/home/simon/io/verysmall/classnotes/c1/algebra/examples.txt
+LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
+(Font)              scaled to size 11.28003pt on input line 8.
+LaTeX Font Info:    Try loading font information for OT1+mdput on input line 8.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdput/ot1mdput.fd
+File: ot1mdput.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdput.
+)
+LaTeX Font Info:    Font shape `OT1/mdput/m/n' will be
+(Font)              scaled to size 11.28003pt on input line 8.
+LaTeX Font Info:    Font shape `OT1/mdput/m/n' will be
+(Font)              scaled to size 7.52002pt on input line 8.
+LaTeX Font Info:    Font shape `OT1/mdput/m/n' will be
+(Font)              scaled to size 5.64001pt on input line 8.
+LaTeX Font Info:    Try loading font information for OML+mdput on input line 8.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdput/omlmdput.fd
+File: omlmdput.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdput.
+)
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 11.28003pt on input line 8.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 7.52002pt on input line 8.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 5.64001pt on input line 8.
+LaTeX Font Info:    Try loading font information for OMS+mdput on input line 8.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdput/omsmdput.fd
+File: omsmdput.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdput.
+)
+LaTeX Font Info:    Font shape `OMS/mdput/m/n' will be
+(Font)              scaled to size 11.28003pt on input line 8.
+LaTeX Font Info:    Font shape `OMS/mdput/m/n' will be
+(Font)              scaled to size 7.52002pt on input line 8.
+LaTeX Font Info:    Font shape `OMS/mdput/m/n' will be
+(Font)              scaled to size 5.64001pt on input line 8.
+LaTeX Font Info:    Try loading font information for OMX+mdput on input line 8.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdput/omxmdput.fd
+File: omxmdput.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdput.
+)
+LaTeX Font Info:    Font shape `OMX/mdput/m/n' will be
+(Font)              scaled to size 11.28003pt on input line 8.
+LaTeX Font Info:    Font shape `OMX/mdput/m/n' will be
+(Font)              scaled to size 7.52002pt on input line 8.
+LaTeX Font Info:    Font shape `OMX/mdput/m/n' will be
+(Font)              scaled to size 5.64001pt on input line 8.
+LaTeX Font Info:    Font shape `OML/mdput/m/n' will be
+(Font)              scaled to size 11.28003pt on input line 8.
+LaTeX Font Info:    Font shape `OML/mdput/m/n' will be
+(Font)              scaled to size 7.52002pt on input line 8.
+LaTeX Font Info:    Font shape `OML/mdput/m/n' will be
+(Font)              scaled to size 5.64001pt on input line 8.
+LaTeX Font Info:    Try loading font information for MDA+mdput on input line 8.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdput/mdamdput.fd
+File: mdamdput.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdput.
+)
+LaTeX Font Info:    Font shape `MDA/mdput/m/n' will be
+(Font)              scaled to size 11.28003pt on input line 8.
+LaTeX Font Info:    Font shape `MDA/mdput/m/n' will be
+(Font)              scaled to size 7.52002pt on input line 8.
+LaTeX Font Info:    Font shape `MDA/mdput/m/n' will be
+(Font)              scaled to size 5.64001pt on input line 8.
+LaTeX Font Info:    Try loading font information for MDB+mdput on input line 8.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdput/mdbmdput.fd
+File: mdbmdput.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdput.
+)
+LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
+(Font)              scaled to size 11.28003pt on input line 8.
+LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
+(Font)              scaled to size 7.52002pt on input line 8.
+LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
+(Font)              scaled to size 5.64001pt on input line 8.
+Package hyperref Info: bookmark level for unknown example defaults to 0 on inpu
+t line 8.
+)
 \tf@thm=\write5
 \openout5 = `examples.thm'.
 
@@ -1192,20 +1276,20 @@ Package rerunfilecheck Info: File `examples.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27640 strings out of 493304
- 586889 string characters out of 6139870
- 748164 words of memory out of 5000000
- 30543 multiletter control sequences out of 15000+600000
- 29005 words of font info for 23 fonts, out of 8000000 for 9000
+ 27751 strings out of 493304
+ 589219 string characters out of 6139870
+ 749164 words of memory out of 5000000
+ 30625 multiletter control sequences out of 15000+600000
+ 51100 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  77i,15n,100p,776b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</usr/share/t
 exlive/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/adobe/utopia/putr8a.pfb>
-Output written on examples.pdf (1 page, 32169 bytes).
+Output written on examples.pdf (1 page, 36035 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
+ 32 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
+ 6 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

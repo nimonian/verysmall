@@ -1,0 +1,65 @@
+\begin{enumerate}
+
+\newpage %Question 1
+\prob[]
+The percentage impurity of a chemical can be modelled by a normal distribution with a mean of $5.8$ and a standard deviation of $0.5$. Obtain the probability that a batch of the chemical has percentage impurity between $5$ and $6$.
+
+\newpage %Question 2
+\prob[]
+Melons sold on a market stall have weights that are normally distributed with a mean of $2.18$kg and a standard deviation of $0.25$kg. 
+	\begin{enumerate}
+	\item For a melon chosen at random, find the probability that its weight lies between $2$kg and $2.5$kg.
+	\item For a sample of three melons chosen at random, find the probability that their mean weight lies between $2$kg and $2.5$kg.
+	\end{enumerate}
+
+\newpage %Question 3
+\prob[]
+A teacher travels from home to work by car each weekday and her journey times are normally distributed with a mean of $30.4$ minutes and a standard deviation of $3.6$ minutes. 
+	\begin{enumerate}
+	\item Calculate the probability that her journey time on a particular day takes between $25$ minutes and $35$ minutes.
+	\item Calculate the probability that the mean journey time over $5$ days is greater than $30$
+	\end{enumerate}
+
+\newpage %Question 4
+\prob[]
+Soup is sold in tins which are filled by a machine.  The actual weight of soup delivered to a tin by the filling machine is always normally distributed about the mean weight with a standard deviation of $8$g.  The machine is set originally to deliver a mean weight of $810$g.
+	\begin{enumerate}
+	\item Determine the probability that the weight of soup in a tin, selected at random, is less than $800$g.
+	\item Determine the probability that the mean weight of soup in a two-pack, selected at random, is between $795$g and $820$g.
+	\end{enumerate}
+
+\newpage %Question 5
+\prob[]
+The weight, $X$ grams, of a particular variety of orange is normally distributed with mean $205$ and standard deviation $25$. A wholesaler decides to grade such oranges by weight. He decides that the smallest $30$ per cent should be graded as small, the largest $20$ per cent graded as large, and the remainder graded as medium. Determine, to one decimal place, the maximum weight of an orange graded as:
+	\begin{enumerate}
+	\item small
+	\item medium
+	\end{enumerate}
+
+\newpage %Question 6
+\prob[]
+Jars of bolognese sauce, sold by a supermarket, are stated to have contents of weight $500$g. The weights, in grams, of the actual contents of jars in a large batch are normally distributed with mean $506$ and standard deviation $5$. Find the weight which is exceeded by the contents of $99.9\%$ of the jars in this batch.
+
+\newpage %Question 7
+\prob[]
+The distance, in kilometres, travelled to work by the employees of a city council may be modelled by a normal distribution with mean $7.5$ and standard deviation $2.5$. Find $d$ such that $10\%$ of the council's employees travel less than $d$ kilometres to work.
+
+
+\newpage %Question 8
+\prob[]
+An airline operates a service between Manchester and Paris. The flight time may be modelled by a normal distribution with mean $85$ minutes and standard deviation $8$ minutes. In order to gain publicity for the service, the airline decides to refund fares when a flight time exceeds $q$ minutes. Find the value of $q$ such that the probability of fares being refunded on a particular flight is $0.001$.
+
+\newpage %Question 9
+\prob[]
+A coin-operated machine dispenses soft drinks into cups when a button is pressed. Investigation shows that the amount, $Y$ millilitres, of soft drink dispensed is less than $475$ on $15\%$ of presses of the button. Find the mean of $Y$, assuming that it may be modelled by a normal distribution with standard deviation $10$.
+
+
+\newpage %Question 10
+\prob[]
+The weights, in grams, of the contents of tins of mackerel fillets are normally distributed with mean $\mu$ and standard deviation $2.5$. Find, to one decimal place, the value of $\mu$ such that $99\%$ of the tins have contents weighing more than $125$ grams.
+
+\newpage %Question 11
+\prob[]
+The content, in milligrams, of vitamin C in a litre carton of cranberry juice can be modelled by a normal distribution with a mean of $32$ and a standard deviation of $2$. Find, to the nearest milligram, the value of the mean required to ensure that the percentage of cartons with a vitamin C content of less than $30$mg is $2.5$.
+
+\end{enumerate}

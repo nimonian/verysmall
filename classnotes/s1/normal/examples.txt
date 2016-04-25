@@ -1,0 +1,136 @@
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{itemize}
+	\item
+	The normal distribution is a curve which gives probabilities for a wide variety of situations. The idea is that randomly chosen values are more likely to be close to some mean average value, and less likely to be far away. We write $X \sim N(\mu,\sigma^{2})$ to say that $X$ is normally distributed with mean $\mu$ and standard deviation $\sigma$.
+
+	\item
+	The curve for the distribution with $\mu=3$ and $\sigma=2$ looks like this:
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+		no markers, domain=-2:7, samples=100,
+		axis lines*=center, xlabel=$x$, ylabel=$y$,
+		every axis y label/.style={at=(current axis.above origin),anchor=south},
+		every axis x label/.style={at=(current axis.right of origin),anchor=west},
+		height=5cm, width=12cm,
+		xtick={0}, ytick=\empty,
+		enlargelimits=false, clip=false, axis on top,
+		grid = major
+]
+	  % \addplot [fill=cyan!20, draw=none, domain=0:5.96] {gauss(6.5,1)} \closedcycle;
+	  \addplot [very thick,cyan!50!black] {gauss(3,2)};
+
+	\end{axis}
+
+
+	\end{tikzpicture}
+	\end{center}
+
+	\item
+	Probabilities are given by areas under the curve. Below is shown the area for $P( 1 \leq X \leq 3.5 ) $
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+		no markers, domain=-2:7, samples=100,
+		axis lines*=center, xlabel=$x$, ylabel=$y$,
+		every axis y label/.style={at=(current axis.above origin),anchor=south},
+		every axis x label/.style={at=(current axis.right of origin),anchor=west},
+		height=5cm, width=12cm,
+		xtick={0,1,3.5}, ytick=\empty,
+		enlargelimits=false, clip=false, axis on top,
+		grid = major
+]
+	  \addplot [fill=cyan!20, draw=none, domain=1:3.5] {gauss(3,2)} \closedcycle;
+	  \addplot [very thick,cyan!50!black] {gauss(3,2)};
+
+	\end{axis}
+
+
+	\end{tikzpicture}
+	\end{center}
+
+	\item
+	Before we find $P(X \leq x)$ we need to standardise the curve. The letter $z$ represents the limit $x$ in the standardised curve, and is given by
+		$$z = \frac{x-\mu}{\sigma}$$
+	Below is drawn the event $P(1 \leq X \leq 2.5)$ after standardising:
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+		no markers, domain=-5:4, samples=100,
+		axis lines*=center, xlabel=$z$, ylabel=$y$,
+		every axis y label/.style={at=(current axis.above origin),anchor=south},
+		every axis x label/.style={at=(current axis.right of origin),anchor=west},
+		height=5cm, width=12cm,
+		xtick={0,-1,0.25}, ytick=\empty,
+		enlargelimits=false, clip=false, axis on top,
+		grid = major
+]
+	  \addplot [fill=cyan!20, draw=none, domain=-1:0.25] {gauss(0,1)} \closedcycle;
+	  \addplot [very thick,cyan!50!black] {gauss(0,1)};
+
+	\end{axis}
+
+
+	\end{tikzpicture}
+	\end{center}
+	The formula book has tables which give probabilities for this standardised curve.
+
+	\item
+	To find a large area, we use the formula book. If $z$ is negative, we just take the positive version of $z$ because of the symmetry. To find a small area, we must do $1 - \text{`large area'}$ because the tables only deal with large areas.
+
+	\item
+	To find $P(a \leq X \leq b)$ we do
+		$$ P(a \leq X \leq b) = P(X \leq b) - P(X \leq a) $$
+
+	\item
+	The total area under the curve is always equal to $1$. The total area to the left or right of the mean is always equal to $\frac{1}{2}$.
+
+	\item
+	If we are asked about probabilities for the mean of a sample, we must standardise with $$ z = \frac{x-\mu}{\sigma/\sqrt{n}} $$ instead, where $n$ is the sample size.
+
+\end{itemize}
+
+\begin{example}[Finding probabilities for a single value]
+A coffee machine dispenses coffee in plastic cups. The mean volume of coffee dispensed is $240$ml with a standard deviation of $10$ml. For a single cup, find the probability that:
+	\begin{multicols}{2}
+	\begin{enumerate}
+	\item The machine dispenses less than $245$ml
+	\item The machine dispenses less than $250$ml
+	\item The machine dispenses more than $260$ml
+	\item The machine dispenses more than $250$ml
+	\item The machine dispenses more than $233$ml
+	\item The machine dispenses more than $230$ml
+	\item The machine dispenses less than $230$ml
+	\item The machine dispenses less than $225$ml
+	\item The machine dispenses between $235$ml and $255$ml
+	\item The machine dispenses exactly $241$ml
+	\end{enumerate}
+	\end{multicols}
+\end{example}
+
+\begin{example}[Finding probabilities for the mean of a sample]
+A baker shapes baguettes by eye. The length $L$ of a baguette is known to be follow the distribution $L \sim N(60,5^2)$. A hotel buys these baguettes in packets of $6$. Assuming each packet to be a random sample, find the probability that the mean of a packet is:
+	\begin{enumerate}
+	\item less than $62$cm
+	\item greater than $62$cm
+	\item less than $57$cm
+	\item between $57$cm and $62$cm
+	\item exactly $58$cm
+	\end{enumerate}
+\end{example}
+
+\begin{example}[Working backwards to find the $z$ value]
+The length of the longest tooth of a t-rex is known to be normally distributed with mean $23$cm and standard deviation $3$cm. Find:
+	\begin{enumerate}
+	\item The length of tooth exceeded by $20\%$ of all dinosaurs
+	\item The length of tooth exceeded by $90\%$ of all dinosaurs
+	\item The length of tooth beneath which three-quarters of all dinosaurs fall
+	\end{enumerate}
+\end{example}
+
+\begin{example}[Finding unknown information]
+In a bakery, the baker wants $99\%$ of all cupcakes to weigh more than $130$g. If the mean weight of a cupcake is $140$g, what is the value of the standard deviation?
+\end{example}

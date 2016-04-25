@@ -72,13 +72,34 @@
 	"buffers":
 	[
 		{
-			"contents": "import os, re\n\ndef create_course(course):\n	coursedir = './%s'%(course)\n	if not os.path.exists(coursedir):\n		os.mkdir(coursedir)\n		print 'Course directory created: %s'%(course)\n	else:\n		print 'Course already exists: %s'%(course)\n		return\n\n	masterfile = coursedir + '/%s.tex'%(course)\n\n	mastertemplate = r'''\\documentclass[12pt]{article}\n\\usepackage{classnotes}\n\\usepackage{subfiles}\n\n\n\\title{A Level Mathematics \\\\ %s}\n\\author{}\n\\date{}\n\n\\begin{document}\n\n\\pagenumbering{gobble}\n\n\\maketitle\n\n\\begin{center}\n\\includegraphics[width=8cm]{../jcclogo.PNG}\n\\end{center}\n\n\\newpage\n\n\\thispagestyle{plain}\n\\tableofcontents\n\n\\end{document}'''%(course.upper())\n\n	if not os.path.exists(masterfile):\n		f = file(masterfile, 'w+')\n		f.write(mastertemplate)\n		f.close()\n		print 'Master file created: %s.tex'%(course)\n\ndef create_topic(course,topic):\n	coursedir = './%s'%(course)\n	topicdir = 	coursedir + '/%s'%(topic)\n	materials = ['examples', 'exercises', 'proofs', 'homework', 'test']\n\n	testtemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Assessment}\n\\thispagestyle{fancy}\n\n\\input{/home/simon/io/verysmall/classnotes/%s/%s/test.txt}\n\n\\begin{flushright}\n\\textbf{Total marks: []}\n\\end{flushright}\n\n\\end{document}'''%(course, topic[0].upper() + topic[1:],course,topic)\n\n	homeworktemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Assessed Homework}\n\\thispagestyle{fancy}\n\n\\input{/home/simon/io/verysmall/classnotes/%s/%s/homework.txt}\n\n\\begin{flushright}\n\\textbf{Total marks: []}\n\\end{flushright}\n\n\\end{document}'''%(course, topic[0].upper() + topic[1:],course,topic)\n\n	exercisetemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Exercises}\n\\thispagestyle{fancy}\n\n\\input{/home/simon/io/verysmall/classnotes/%s/%s/exercises.txt}\n\n\\end{document}'''%(course, topic[0].upper() + topic[1:],course,topic)\n\n	examplestemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Examples}\n\\thispagestyle{fancy}\n\n\\input{/home/simon/io/verysmall/classnotes/%s/%s/examples.txt}\n\n\\end{document}'''%(course, topic[0].upper() + topic[1:], course, topic)\n\n	proofstemplate = r'''\n\\documentclass[../%s]{subfiles}\n\n\\begin{document}\n\n\\subsection*{%s Proofs}\n\\thispagestyle{fancy}\n\n\\begin{theorem}[]\n\n\\end{theorem}\n\\end{document}'''%(course, topic[0].upper() + topic[1:])\n\n	if not os.path.exists(coursedir):\n		return 'Error - No such course exists: %s'%(course)\n\n	if not os.path.exists(topicdir):\n		os.mkdir(topicdir)\n		print 'Topic directory created: %s'%(topic)\n\n		masterfile = open(coursedir + '/%s.tex'%(course), 'r')\n		mastercontent = masterfile.read()\n		masterfile.close()\n\n		mastercontent = mastercontent.replace(r'\\end{document}',r'''\n			\\newpage\n			\\section{%s}\n\n			\\end{document}'''%(topic[0].upper() + topic[1:]))\n\n		masterfile = open(coursedir + '/%s.tex'%(course), 'w')\n		masterfile.write(mastercontent)\n		masterfile.close()\n\n	else:\n		print 'Topic already exists: %s'%(topic)\n	\n	for m in materials:\n		mpath = topicdir + '/%s.tex'%(m)\n\n		if not os.path.exists(mpath):\n			masterfile = open(coursedir + '/%s.tex'%(course), 'r')\n			mastercontent = masterfile.read()\n			masterfile.close()\n			\n			mastercontent = mastercontent.replace(r'\\end{document}',r'''\n				\\newpage\n				\\subfile{%s}\n\n				\\end{document}'''%(r'./%s/%s.tex'%(topic,m)))\n\n			masterfile = open(coursedir + '/%s.tex'%(course), 'w')\n			masterfile.write(mastercontent)\n			masterfile.close()\n\n	\n		f = file(mpath, 'w+')\n		if not os.path.exists(mpath.replace('tex','txt')):	\n			g = file(mpath.replace('tex','txt'),'w+')\n		\n		if m == 'homework':\n			f.write(homeworktemplate)\n		if m == 'exercises':\n			f.write(exercisetemplate)\n		if m == 'examples':\n			f.write(examplestemplate)\n		if m == 'proofs':\n			f.write(proofstemplate)\n		if m == 'test':\n			f.write(testtemplate)\n			\n		f.close()\n		print 'Material created: %s.tex'%(m)\n\ndef calculate_totals():\n	probEx = re.compile(r'(\\prob\\[)(\\d)')\n	for path in os.walk(os.path.abspath('.')):\n		for base in path[2]:\n			if base in ['homework.txt','test.txt']:\n				total = 0\n				file = path[0] + '/' + base\n\n				f = open(file, 'r')\n				content = f.read()\n\n				if probEx.findall(content):\n					for prob in probEx.findall(content):\n						total += int(prob[1])\n\n				f.close()\n\n				file = file.replace('.txt','.tex')\n\n				f = open(file, 'r')\n				content = f.read()\n				f.close()\n\n				f = open(file, 'w')\n\n				content = re.sub(r'Total marks: \\[.*\\]',r'Total marks: [%s]'%(total),content)\n\n				f.write(content)\n				f.close()\n\nteacher_materials():\n\n\nS1 = ['measures', 'probability', 'binomial', 'correlation', 'regression', 'normal', 'confidence']\nC1 = ['algebra','surds','geometry','quadratics1','quadratics2','polynomials','circles','differentiation','integration']\n\ncreate_course('s1')\n\nfor course in S1:\n	create_topic('s1',course)\n\ncalculate_totals()\n",
-			"file": "classnotes.py",
-			"file_size": 4806,
-			"file_write_time": 131038837463357156,
+			"file": "s1/normal/exercises.txt",
 			"settings":
 			{
-				"buffer_size": 4832,
+				"buffer_size": 1733,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "s1/normal/exercisesteacher.tex",
+			"settings":
+			{
+				"buffer_size": 196,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/usr/share/texmf/tex/latex/local/classnotes.sty",
+			"settings":
+			{
+				"buffer_size": 2621,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "s1/normal/exercisesteacher.txt",
+			"settings":
+			{
+				"buffer_size": 1769,
 				"line_ending": "Unix"
 			}
 		}
@@ -136,12 +157,32 @@
 	},
 	"expanded_folders":
 	[
-		"/home/simon/io/verysmall/classnotes"
+		"/home/simon/io/verysmall/classnotes",
+		"/home/simon/io/verysmall/classnotes/s1",
+		"/home/simon/io/verysmall/classnotes/s1/normal"
 	],
 	"file_history":
 	[
-		"/home/simon/Documents/coursera/webdesign/fullstack-course4/Assignments/README-FIRST.txt",
+		"/home/simon/io/verysmall/classnotes/s1/normal/exercisesteacher.txt",
+		"/home/simon/io/verysmall/classnotes/s1/normal/examples.txt",
+		"/home/simon/io/verysmall/classnotes/s1/normal/exercises.tex",
+		"/home/simon/io/verysmall/classnotes/s1/normal/exercises.txt",
+		"/home/simon/io/verysmall/classnotes/s1/normal/examples.tex",
 		"/home/simon/io/verysmall/classnotes/classnotes.py",
+		"/home/simon/io/verysmall/classnotes/s1/regression/examplesteacher.tex",
+		"/home/simon/io/verysmall/rudiments/index.php",
+		"/home/simon/io/verysmall/classnotes/s1/regression/examplesteacher.txt",
+		"/home/simon/io/verysmall/classnotes/s1/regression/examples.txt",
+		"/home/simon/io/verysmall/classnotes/s1/correlation/examples.tex",
+		"/home/simon/io/verysmall/classnotes/s1/correlation/examplesteacher.tex",
+		"/home/simon/.cache/.fr-wt7fFx/readme.txt",
+		"/home/simon/io/verysmall/classnotes/s1/correlation/examples.txt",
+		"/home/simon/io/verysmall/classnotes/classnotes.sublime-project",
+		"/home/simon/io/verysmall/classnotes/c1/algebra/homeworkteacher.txt",
+		"/home/simon/io/verysmall/classnotes/c1/algebra/homeworkteacher.tex",
+		"/home/simon/io/verysmall/classnotes/c1/algebra/examples.txt",
+		"/home/simon/io/verysmall/classnotes/c1/algebra/teacherexamples.txt",
+		"/home/simon/Documents/coursera/webdesign/fullstack-course4/Assignments/README-FIRST.txt",
 		"/home/simon/io/verysmall/classnotes/c1/c1.tex",
 		"/home/simon/io/verysmall/classnotes/c1/surds/homework.txt",
 		"/home/simon/io/verysmall/classnotes/c1/quadratics2/homework.txt",
@@ -156,7 +197,6 @@
 		"/home/simon/io/verysmall/classnotes/c1/quadratics_2/test.tex",
 		"/home/simon/io/verysmall/classnotes/c1/quadratics_2/homework.txt",
 		"/home/simon/io/verysmall/classnotes/c1/quadratics_1/homework.txt",
-		"/home/simon/io/verysmall/classnotes/classnotes.sublime-project",
 		"/home/simon/io/verysmall/classnotes/c2/differentiation/exercises.tex",
 		"/home/simon/io/verysmall/classnotes/c2/c2.tex",
 		"/home/simon/io/verysmall/classnotes/c2/differentiation/homework.tex",
@@ -250,24 +290,7 @@
 		"/home/simon/Documents/mathslides/fromscratch.html",
 		"/home/simon/Documents/mathslides/indefinite_integral_polynomial.sage",
 		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/designer.php",
-		"/home/simon/Documents/mathslides/index.html",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/SAGE_auto_problems/c1/integration/undoing_differentiation/integrate_to_find_equation.sage",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/SAGE_auto_problems/c1/integration/undoing_differentiation/improper_integration.sage",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/SAGE_auto_problems/c1/algebra/cancel_common_factors_1.sage",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/problem_designer.php",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/includes/header.php",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/mathjaxer.php",
-		"/home/simon/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/simon/.config/sublime-text-3/Packages/User/Plain text.sublime-settings",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/index.php",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/SAGE_auto_problems/c1/algebra/an_auto_problem.sage",
-		"/home/simon/Documents/web2py/applications/vsmall/views/default/mathjaxer.html",
-		"/home/simon/Documents/web2py/applications/vsmall/controllers/course.py",
-		"/home/simon/Documents/web2py/applications/vsmall/views/course/index.html",
-		"/home/simon/Documents/web2py/applications/vsmall/controllers/maas.py",
-		"/home/simon/Documents/web2py/applications/vsmall/views/course/maas/index.html",
-		"/home/simon/Documents/web2py/applications/vsmall/controllers/problem.py",
-		"/home/simon/Documents/web2py/applications/vsmall/views/default/index.html"
+		"/home/simon/Documents/mathslides/index.html"
 	],
 	"find":
 	{
@@ -285,6 +308,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"3",
+			"qquad",
 			"section*",
 			"Marks",
 			"iframe",
@@ -325,36 +350,123 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "classnotes.py",
+					"file": "s1/normal/exercises.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4832,
+						"buffer_size": 1733,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4138,
-								4138
+								1161,
+								1161
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3332.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "s1/normal/exercisesteacher.tex",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 196,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/usr/share/texmf/tex/latex/local/classnotes.sty",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2621,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2621,
+								2621
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/TeX.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1173.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "s1/normal/exercisesteacher.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1769,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -441,7 +553,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 178.0,
+	"side_bar_width": 227.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
