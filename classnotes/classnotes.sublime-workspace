@@ -72,34 +72,26 @@
 	"buffers":
 	[
 		{
-			"file": "s1/normal/exercises.txt",
+			"file": "/home/simon/io/verysmall/index.html",
 			"settings":
 			{
-				"buffer_size": 1733,
+				"buffer_size": 2641,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "s1/normal/exercisesteacher.tex",
+			"file": "/home/simon/io/verysmall/rudiments/instructions.txt",
 			"settings":
 			{
-				"buffer_size": 196,
+				"buffer_size": 78,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/usr/share/texmf/tex/latex/local/classnotes.sty",
+			"file": "/home/simon/io/verysmall/rudiments/index.php",
 			"settings":
 			{
-				"buffer_size": 2621,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "s1/normal/exercisesteacher.txt",
-			"settings":
-			{
-				"buffer_size": 1769,
+				"buffer_size": 2117,
 				"line_ending": "Unix"
 			}
 		}
@@ -157,16 +149,18 @@
 	},
 	"expanded_folders":
 	[
-		"/home/simon/io/verysmall/classnotes",
+		"/home/simon/io/verysmall/classnotes/c1",
 		"/home/simon/io/verysmall/classnotes/s1",
 		"/home/simon/io/verysmall/classnotes/s1/normal"
 	],
 	"file_history":
 	[
-		"/home/simon/io/verysmall/classnotes/s1/normal/exercisesteacher.txt",
-		"/home/simon/io/verysmall/classnotes/s1/normal/examples.txt",
-		"/home/simon/io/verysmall/classnotes/s1/normal/exercises.tex",
 		"/home/simon/io/verysmall/classnotes/s1/normal/exercises.txt",
+		"/home/simon/io/verysmall/rudiments/c1/algebra/algebraic_fractions/cancel_common_factors_1.sage",
+		"/home/simon/io/verysmall/classnotes/s1/normal/examples.txt",
+		"/home/simon/io/verysmall/classnotes/s1/normal/exercisesteacher.txt",
+		"/usr/share/texmf/tex/latex/local/classnotes.sty",
+		"/home/simon/io/verysmall/classnotes/s1/normal/exercises.tex",
 		"/home/simon/io/verysmall/classnotes/s1/normal/examples.tex",
 		"/home/simon/io/verysmall/classnotes/classnotes.py",
 		"/home/simon/io/verysmall/classnotes/s1/regression/examplesteacher.tex",
@@ -288,9 +282,7 @@
 		"/home/simon/Documents/mathslides/test/examples/math.html",
 		"/home/simon/Documents/mathslides/demo.html",
 		"/home/simon/Documents/mathslides/fromscratch.html",
-		"/home/simon/Documents/mathslides/indefinite_integral_polynomial.sage",
-		"/home/simon/lampstack-5.5.30-1/apps/vsmall/htdocs/designer.php",
-		"/home/simon/Documents/mathslides/index.html"
+		"/home/simon/Documents/mathslides/indefinite_integral_polynomial.sage"
 	],
 	"find":
 	{
@@ -355,40 +347,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "s1/normal/exercises.txt",
+					"file": "/home/simon/io/verysmall/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1733,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1161,
-								1161
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "s1/normal/exercisesteacher.tex",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 196,
+						"buffer_size": 2641,
 						"regions":
 						{
 						},
@@ -401,7 +364,35 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/simon/io/verysmall/rudiments/instructions.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 78,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -412,41 +403,11 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/usr/share/texmf/tex/latex/local/classnotes.sty",
+					"file": "/home/simon/io/verysmall/rudiments/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2621,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2621,
-								2621
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LaTeX/TeX.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1173.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "s1/normal/exercisesteacher.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1769,
+						"buffer_size": 2117,
 						"regions":
 						{
 						},
@@ -459,14 +420,13 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 918.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

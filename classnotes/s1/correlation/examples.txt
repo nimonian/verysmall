@@ -19,7 +19,7 @@
 		\text{No correlation:} & \qquad -0.1 \leq r \leq 0.1 \\
 		\text{Weak negative correlation:} & \qquad -0.3 \leq r < -0.1 \\
 		\text{Moderate negative correlation:} & \qquad -0.6 \leq r < -0.3 \\
-		\text{Strong negative correlation:} & \qquad -0.1 \leq r < -0.6 \\
+		\text{Strong negative correlation:} & \qquad -1 \leq r < -0.6 \\
 		\end{align*}
 	\item Importantly, $r$ is only a test for \emph{linear correlation}.There might be a relationship between $x$ and $y$ which is not a straight line!
 
